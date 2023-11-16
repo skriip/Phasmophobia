@@ -1,6 +1,84 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Privacy2";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="text-center">
+    <style>
+        body {
+            background-color: #000000;
+            color: #8d9ea5; /* Цвет текста, чтобы текст был видимым на черном фоне */
+        }
+    </style>
+
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            height: 400px;
+            margin: 0;
+            padding: 0;
+        }
+
+            header::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 500px;
+                margin: 0;
+                padding: 0;
+                background: url(/imag/sverk.gif ) no-repeat top center;
+                
+                background-size: cover;
+            }
+
+        .site-title {
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+
+        header::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 500px;
+            margin: 0;
+            padding: 0;
+            background: url(/imag/sverk.gif) no-repeat top center;
+            
+            background-size: cover;
+            opacity: .4;
+        }
+   
+    </style>
+
+
+    <div class="bgImg">
+        <img src="/imag/logo.png" width="500px" />
+    </div>
+    
+
+       
+    <h1 class="display-4">
+        <img src="~/imag/logo.png" width="100%"
+             height="100%" />
+    </h1>
+
+    <p>Привет, дорогой друг!</p>
+</div>
+
+
+

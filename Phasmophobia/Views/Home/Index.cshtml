@@ -1,8 +1,79 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home ";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #8d9ea5; /* Цвет текста, чтобы текст был видимым на черном фоне */
+        }
+    </style>
+
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            height: 400px;
+            margin: 0;
+            padding: 0;
+        }
+
+            header::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 500px;
+                margin: 0;
+                padding: 0;
+                background: url(/imag/fazm.jpg ) no-repeat top center;
+                background-size: cover;
+            }
+
+        .site-title {
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+
+        header::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 500px;
+            margin: 0;
+            padding: 0;
+            background: url(/imag/fazm.jpg) no-repeat top center;
+            background-size: cover;
+            opacity: .4;
+        }
+    </style>
+
+   
+   
+
+
+
+    <h1 class="display-4">Phasmabook</h1>
+
+	<h1 class="display-4">
+		<img src="~/imag/logo.png" width="100%"
+			 height="100%" />
+	</h1>
+
+    <p>Привет, дорогой друг!</p>
 </div>
