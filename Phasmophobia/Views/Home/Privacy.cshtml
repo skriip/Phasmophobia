@@ -10,74 +10,108 @@
         }
     </style>
 
-
     <style>
-        body,
-        html {
-            height: 100%;
+        body {
             margin: 0;
             padding: 0;
+            height: 100%;
+            font: 36px/1.6 Open Sans, serif;
+        }
+
+        article {
+            overflow-x: hidden;
+            height: 100vh;
+            max-height: 100%;
+            -webkit-perspective: 1px;
+            perspective: 1px;
+            -webkit-perspective-origin: center top;
+            perspective-origin: center top;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
         }
 
         header {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
             width: 100%;
-            height: 400px;
-            margin: 0;
-            padding: 0;
+            height: 80vh;
+            -webkit-transform: translateZ(-1px) scale(2);
+            transform: translateZ(-1px) scale(2);
+            -webkit-transform-origin: center top;
+            -ms-transform-origin: center top;
+            transform-origin: center top;
+            vertical-align: top;
+            background: url(/imag/fazm.jpg) ; 
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 0 20px;
+            text-align: center;
         }
 
-            header::before {
-                position: absolute;
-                content: "";
-                top: 0;
-                left: 0;
-                display: block;
-                width: 100%;
-                height: 500px;
+            header p {
+                font-size: 1em;
                 margin: 0;
-                padding: 0;
-                background: url(/imag/sverk.gif ) no-repeat top center;
-                
-                background-size: cover;
+                color: white;
             }
 
-        .site-title {
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-
-        header::before {
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
-            display: block;
-            width: 100%;
-            height: 500px;
+        h1 {
+            font-size: 2em;
+            font-weight: 400;
             margin: 0;
-            padding: 0;
-            background: url(/imag/sverk.gif) no-repeat top center;
-            
-            background-size: cover;
-            opacity: .4;
+            padding: 0 20px;
+            text-align: center;
+            color: white;
         }
-   
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .content {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 50px;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            background: white;
+            color: black;
+            font-size: 0.6em;
+        }
+     
     </style>
+    <article>
+        <header>
+            <h1>
+                <a href="#">
+                    Мой блог
+                </a>
+            </h1>
+            <p>Заголовок с CSS Параллакс</p>
+        </header>
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        </div>
 
-
-    <div class="bgImg">
-        <img src="/imag/logo.png" width="500px" />
-    </div>
-    
-
-       
-    <h1 class="display-4">
-        <img src="~/imag/logo.png" width="100%"
-             height="100%" />
-    </h1>
-
-    <p>Привет, дорогой друг!</p>
+    </article>
 </div>
 
 
