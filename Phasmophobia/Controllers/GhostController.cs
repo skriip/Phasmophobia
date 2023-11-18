@@ -10,7 +10,102 @@ namespace Phasmophobia.Controllers
         {
             return View();
         }
-
+        public ActionResult Demon()
+        {
+            return View();
+        }
+        public ActionResult Banshee()
+        {
+            return View();
+        }
+        public ActionResult Deogen()
+        {
+            return View();
+        }
+        public ActionResult Goryo()
+        {
+            return View();
+        }
+        public ActionResult Hantu()
+        {
+            return View();
+        }
+        public ActionResult Mare()
+        {
+            return View();
+        }
+        public ActionResult Jinn()
+        {
+            return View();
+        }
+        public ActionResult Mimic()
+        {
+            return View();
+        }
+        public ActionResult Moroi()
+        {
+            return View();
+        }
+        public ActionResult Myling()
+        {
+            return View();
+        }
+        public ActionResult Obake()
+        {
+            return View();
+        }
+        public ActionResult Oni()
+        {
+            return View();
+        }
+        public ActionResult Onryo()
+        {
+            return View();
+        }
+        public ActionResult Phantom()
+        {
+            return View();
+        }
+        public ActionResult Poltergeist()
+        {
+            return View();
+        }
+        public ActionResult Raiju()
+        {
+            return View();
+        }
+        public ActionResult Revenant()
+        {
+            return View();
+        }
+        public ActionResult Shade()
+        {
+            return View();
+        }
+        public ActionResult Spirit()
+        {
+            return View();
+        }
+        public ActionResult Thaye()
+        {
+            return View();
+        }
+        public ActionResult Twins()
+        {
+            return View();
+        }
+        public ActionResult Wraith()
+        {
+            return View();
+        }
+        public ActionResult Yokai()
+        {
+            return View();
+        }
+        public ActionResult Yurei()
+        {
+            return View();
+        }
         // GET: GhostController/Details/5
         public ActionResult Details(int id)
         {
