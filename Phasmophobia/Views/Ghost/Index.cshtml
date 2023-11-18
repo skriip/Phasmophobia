@@ -1,15 +1,206 @@
-﻿@{
-    ViewData["Title"] = "Home ";
-}
-
-<div class="text-center">
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фазмафобия: Улики и Призраки</title>
     <style>
         body {
-            background-color: #000000;
-            color: #8d9ea5; /* Цвет текста, чтобы текст был видимым на черном фоне */
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h2 {
+            color: white; /* Зеленый цвет для заголовков */
+        }
+
+        .evidence-list {
+            list-style-type: none;
+        }
+
+        .ghost-list {
+            list-style-type: none;
+        }
+
+        .ghost-name {
+            font-weight: bold;
+        }
+
+        .evidence-square {
+            width: 20px;
+            height: 20px;
+            border: 1px solid white;
+            box-sizing: border-box;
+            display: inline-block;
+            margin-right: 5px;
+            position: relative;
+        }
+
+            .evidence-square::before {
+                content: "\2713"; /* Крестик (✓) */
+                color: white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+
+        .evidence-selected .evidence-square::before {
+            content: "\2717"; /* Крестик (✗) */
+            color: white;
+            opacity: 1;
+        }
+
+        .evidence-selected.crossed-out .evidence-square::before {
+            content: "\0336"; /* Зачеркивание (/) */
+            color: grey;
+            opacity: 1;
+        }
+
+        .evidence-selected.crossed-out {
+            text-decoration: line-through;
+            color: grey !important;
         }
     </style>
+</head>
+<body>
+    <h1>Фазмафобия: Улики и Призраки</h1>
 
-    <h1>Ghoost</h1>
+    <h2>Улики/Доказательства</h2>
+    <ul class="evidence-list">
+        <li id="EMF" onclick="toggleEvidence('EMF')"><span class="evidence-square"></span>Эмп уровень 5</li>
+        <li id="Fingerprints" onclick="toggleEvidence('Fingerprints')"><span class="evidence-square"></span>Отпечатки</li>
+        <li id="FreezingTemperatures" onclick="toggleEvidence('FreezingTemperatures')"><span class="evidence-square"></span>Минусовая температура</li>
+        <li id="GhostOrb" onclick="toggleEvidence('GhostOrb')"><span class="evidence-square"></span>Призрачный огонек</li>
+        <li id="GhostWriting" onclick="toggleEvidence('GhostWriting')"><span class="evidence-square"></span>Записи в блокноте</li>
+        <li id="SpiritBox" onclick="toggleEvidence('SpiritBox')"><span class="evidence-square"></span>Радио</li>
+        <li id="DotsProjector" onclick="toggleEvidence('DotsProjector')"><span class="evidence-square"></span>Лазерный проектор</li>
+    </ul>
 
-</div>
+    <h2>Призраки</h2>
+    <ul class="ghost-list">
+        <li id="ghost1" class="ghost" data-evidence="EMF GhostWriting SpiritBox">
+            <span class="ghost-name">Дух</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF SpiritBox DotsProjector">
+            <span class="ghost-name">Мираж</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="Fingerprints SpiritBox DotsProjector">
+            <span class="ghost-name">Фантом</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints SpiritBox">
+            <span class="ghost-name">Полтергейст</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="Fingerprints GhostOrb DotsProjector">
+            <span class="ghost-name">Банши</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF Fingerprints FreezingTemperatures">
+            <span class="ghost-name">Джинн</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="GhostWriting SpiritBox GhostOrb">
+            <span class="ghost-name">Мара</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting FreezingTemperatures GhostOrb">
+            <span class="ghost-name">Ревенант</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="EMF GhostWriting FreezingTemperatures">
+            <span class="ghost-name">Тень</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints FreezingTemperatures">
+            <span class="ghost-name">Демон</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="FreezingTemperatures GhostOrb DotsProjector">
+            <span class="ghost-name">Юрэй</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF FreezingTemperatures DotsProjector">
+            <span class="ghost-name">Они</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="SpiritBox GhostOrb DotsProjector">
+            <span class="ghost-name">Ёкай</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="Fingerprints FreezingTemperatures GhostOrb">
+            <span class="ghost-name">Ханту</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="EMF Fingerprints DotsProjector">
+            <span class="ghost-name">Горё</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF GhostWriting Fingerprints">
+            <span class="ghost-name">Мюлинг</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="SpiritBox FreezingTemperatures GhostOrb">
+            <span class="ghost-name">Онрё</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF SpiritBox FreezingTemperatures">
+            <span class="ghost-name">Близнецы</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="EMF GhostOrb DotsProjector">
+            <span class="ghost-name">Райдзю</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF Fingerprints GhostOrb">
+            <span class="ghost-name">Обакэ</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="Fingerprints SpiritBox FreezingTemperatures">
+            <span class="ghost-name">Мимик</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting SpiritBox FreezingTemperatures">
+            <span class="ghost-name">Морой</span>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="GhostWriting SpiritBox DotsProjector">
+            <span class="ghost-name">Деоген</span>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting GhostOrb DotsProjector">
+            <span class="ghost-name">Тайэ</span>
+        </li>
+        <!-- Добавьте остальные призраки с их уликами по аналогии -->
+    </ul>
+
+    <script>
+        function toggleEvidence(evidenceId) {
+            var evidenceElement = document.getElementById(evidenceId);
+
+            if (evidenceElement.classList.contains("evidence-selected")) {
+                if (evidenceElement.classList.contains("crossed-out")) {
+                    evidenceElement.classList.remove("evidence-selected", "crossed-out");
+                } else {
+                    evidenceElement.classList.add("crossed-out");
+                }
+            } else {
+                evidenceElement.classList.add("evidence-selected");
+            }
+
+            updateGhostVisibility();
+        }
+
+        function updateGhostVisibility() {
+            var selectedEvidence = document.querySelectorAll(".evidence-selected:not(.crossed-out)");
+            var crossedOutEvidence = document.querySelectorAll(".evidence-selected.crossed-out");
+            var ghosts = document.querySelectorAll(".ghost");
+
+            ghosts.forEach(function (ghost) {
+                var ghostEvidence = ghost.getAttribute("data-evidence").split(" ");
+                var isVisible = true;
+
+                selectedEvidence.forEach(function (evidence) {
+                    if (ghostEvidence.indexOf(evidence.id) === -1) {
+                        isVisible = false;
+                    }
+                });
+
+                crossedOutEvidence.forEach(function (evidence) {
+                    if (ghostEvidence.indexOf(evidence.id) !== -1) {
+                        isVisible = false;
+                    }
+                });
+
+                if (isVisible) {
+                    ghost.style.color = "white";
+                } else {
+                    ghost.style.color = "grey";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
