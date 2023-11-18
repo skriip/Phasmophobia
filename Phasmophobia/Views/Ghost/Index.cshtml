@@ -12,7 +12,7 @@
         }
 
         h1, h2 {
-            color: white; /* Зеленый цвет для заголовков */
+            color: white;
         }
 
         .evidence-list {
@@ -38,7 +38,7 @@
         }
 
             .evidence-square::before {
-                content: "\2713"; /* Крестик (✓) */
+                content: "\2713"; 
                 color: white;
                 position: absolute;
                 left: 50%;
@@ -48,13 +48,13 @@
             }
 
         .evidence-selected .evidence-square::before {
-            content: "\2717"; /* Крестик (✗) */
+            content: "\2717"; 
             color: white;
             opacity: 1;
         }
 
         .evidence-selected.crossed-out .evidence-square::before {
-            content: "\0336"; /* Зачеркивание (/) */
+            content: "\0336"; 
             color: grey;
             opacity: 1;
         }
@@ -153,7 +153,6 @@
         <li id="ghost2" class="ghost" data-evidence="GhostWriting GhostOrb DotsProjector">
             <span class="ghost-name">Тайэ</span>
         </li>
-        <!-- Добавьте остальные призраки с их уликами по аналогии -->
     </ul>
 
     <script>
