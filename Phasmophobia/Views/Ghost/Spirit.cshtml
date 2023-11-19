@@ -10,21 +10,31 @@
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
+            display: flex;
+            flex-direction: row;
         }
 
         h1, h2 {
             color: white;
         }
 
+        .container {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
         .evidence-list,
-        .ghost-list {
+        .ghost-list,
+        .ghost-info {
             list-style-type: none;
-            column-gap: 10px;
             padding: 0;
+            margin: 0;
         }
 
         .ghost-list {
-            column-count: 3;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
         }
 
         .ghost-name {
@@ -41,15 +51,15 @@
             position: relative;
         }
 
-            .evidence-square::before {
-                content: "\2713";
-                color: white;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                opacity: 0;
-            }
+        .evidence-square::before {
+            content: "\2713";
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
 
         .evidence-selected .evidence-square::before,
         .evidence-selected.crossed-out .evidence-square::before {
@@ -66,13 +76,22 @@
             text-decoration: none;
             color: white;
         }
+
+        .ghost-info-description {
+            padding-left: 20px;
+        }
+
+        .ghost-info p {
+            margin: 0 0 10px;
+        }
     </style>
 </head>
 <body>
     <h1>Фазмафобия: Улики и Призраки</h1>
-
-    <h2>Улики/Доказательства</h2>
-    <ul class="evidence-list">
+    <div class="container">
+        
+            <h2>Улики/Доказательства</h2>
+            <ul class="evidence-list">
         <li id="EMF" onclick="toggleEvidence('EMF')"><span class="evidence-square"></span>ЭМП уровень 5</li>
         <li id="Fingerprints" onclick="toggleEvidence('Fingerprints')"><span class="evidence-square"></span>Ультрафиолет</li>
         <li id="FreezingTemperatures" onclick="toggleEvidence('FreezingTemperatures')"><span class="evidence-square"></span>Минусовая температура</li>
@@ -81,9 +100,10 @@
         <li id="SpiritBox" onclick="toggleEvidence('SpiritBox')"><span class="evidence-square"></span>Радиоприёмник</li>
         <li id="DotsProjector" onclick="toggleEvidence('DotsProjector')"><span class="evidence-square"></span>Лазерный проектор</li>
     </ul>
+    </div>
 
-    <h2>Призраки</h2>
-    <ul class="ghost-list">
+    <div class="container">
+        <ul class="ghost-list">
         <li id="ghost1" class="ghost" data-evidence="EMF GhostWriting SpiritBox">
             <a asp-controller="Ghost" asp-action="Spirit" class="ghost-link">
                 <span style="color:red" class="ghost-name">Дух</span>
@@ -205,6 +225,40 @@
             </a>
         </li>
     </ul>
+    </div>
+    <div class="container ghost-info-description">
+        <h2>Информация о призраке</h2>
+        <p id="ghost-info">Выберите призрака из списка, чтобы увидеть информацию.</p>
+        <p id="ghost-features">Особенности и слабости:</p>
+        <ul>
+            <li>
+                Улики:
+                <ul>
+                    <li>ЭМП (ур. 5)</li>
+                    <li>ЭМП (ур. 5)</li>
+                    <li>Радиоприёмник</li>
+                    <li>Радиоприёмник</li>
+                    <li>Записи в блокноте</li>
+                    <li>Записи в блокноте</li>
+                </ul>
+            </li>
+            <li>Порог рассудка: 50%</li>
+            <li>Скорость призрака: 1,7 м/с🔊</li>
+            <li>
+                Множитель скорости:
+                <ul>
+                    <li>50%</li>
+                    <li>75%</li>
+                    <li>100%</li>
+                    <li>125%</li>
+                    <li>150%</li>
+                </ul>
+            </li>
+            <li>Дополнительная информация: При использовании благовония возл
+           </li>
+            </ul>
+        </div>
+    
 
     <script>
         function toggleEvidence(evidenceId) {
