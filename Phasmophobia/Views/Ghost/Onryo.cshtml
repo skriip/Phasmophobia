@@ -1,4 +1,256 @@
-﻿@page
-@model Phasmophobia.Views.Ghost.OnryoModel
-@{
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фазмафобия: Улики и Призраки</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        h1, h2 {
+            color: white;
+        }
+
+        .evidence-list,
+        .ghost-list {
+            list-style-type: none;
+            column-gap: 10px;
+            padding: 0;
+        }
+
+        .ghost-list {
+            column-count: 3;
+        }
+
+        .ghost-name {
+            font-weight: bold;
+        }
+
+        .evidence-square {
+            width: 20px;
+            height: 20px;
+            border: 1px solid white;
+            box-sizing: border-box;
+            display: inline-block;
+            margin-right: 5px;
+            position: relative;
+        }
+
+            .evidence-square::before {
+                content: "\2713";
+                color: white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+
+        .evidence-selected .evidence-square::before,
+        .evidence-selected.crossed-out .evidence-square::before {
+            content: "\2717";
+            opacity: 1;
+        }
+
+        .evidence-selected.crossed-out .evidence-square::before {
+            content: "\0336";
+            color: grey;
+        }
+
+        .ghost-link {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Фазмафобия: Улики и Призраки</h1>
+
+    <h2>Улики/Доказательства</h2>
+    <ul class="evidence-list">
+        <li id="EMF" onclick="toggleEvidence('EMF')"><span class="evidence-square"></span>ЭМП уровень 5</li>
+        <li id="Fingerprints" onclick="toggleEvidence('Fingerprints')"><span class="evidence-square"></span>Ультрафиолет</li>
+        <li id="FreezingTemperatures" onclick="toggleEvidence('FreezingTemperatures')"><span class="evidence-square"></span>Минусовая температура</li>
+        <li id="GhostOrb" onclick="toggleEvidence('GhostOrb')"><span class="evidence-square"></span>Призрачный огонек</li>
+        <li id="GhostWriting" onclick="toggleEvidence('GhostWriting')"><span class="evidence-square"></span>Записи в блокноте</li>
+        <li id="SpiritBox" onclick="toggleEvidence('SpiritBox')"><span class="evidence-square"></span>Радиоприёмник</li>
+        <li id="DotsProjector" onclick="toggleEvidence('DotsProjector')"><span class="evidence-square"></span>Лазерный проектор</li>
+    </ul>
+
+    <h2>Призраки</h2>
+    <ul class="ghost-list">
+        <li id="ghost1" class="ghost" data-evidence="EMF GhostWriting SpiritBox">
+            <a asp-controller="Ghost" asp-action="Spirit" class="ghost-link">
+                <span class="ghost-name">Дух</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF SpiritBox DotsProjector">
+            <a asp-controller="Ghost" asp-action="Wraith" class="ghost-link">
+                <span class="ghost-name">Мираж</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="Fingerprints SpiritBox DotsProjector">
+            <a asp-controller="Ghost" asp-action="Phantom" class="ghost-link">
+                <span class="ghost-name">Фантом</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints SpiritBox">
+            <a asp-controller="Ghost" asp-action="Poltergeist" class="ghost-link">
+                <span class="ghost-name">Полтергейст</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="Fingerprints GhostOrb DotsProjector">
+            <a asp-controller="Ghost" asp-action="Banshee" class="ghost-link">
+                <span class="ghost-name">Банши</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF Fingerprints FreezingTemperatures">
+            <a asp-controller="Ghost" asp-action="Jinn" class="ghost-link">
+                <span class="ghost-name">Джинн</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="GhostWriting SpiritBox GhostOrb">
+            <a asp-controller="Ghost" asp-action="Mare" class="ghost-link">
+                <span class="ghost-name">Мара</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting FreezingTemperatures GhostOrb">
+            <a asp-controller="Ghost" asp-action="Revenant" class="ghost-link">
+                <span class="ghost-name">Ревенант</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="EMF GhostWriting FreezingTemperatures">
+            <a asp-controller="Ghost" asp-action="Shade" class="ghost-link">
+                <span class="ghost-name">Тень</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints FreezingTemperatures">
+            <a asp-controller="Ghost" asp-action="Demon" class="ghost-link">
+                <span class="ghost-name">Демон</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="FreezingTemperatures GhostOrb DotsProjector">
+            <a asp-controller="Ghost" asp-action="Yurei" class="ghost-link">
+                <span class="ghost-name">Юрэй</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF FreezingTemperatures DotsProjector">
+            <a asp-controller="Ghost" asp-action="Oni" class="ghost-link">
+                <span class="ghost-name">Они</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="SpiritBox GhostOrb DotsProjector">
+            <a asp-controller="Ghost" asp-action="Yokai" class="ghost-link">
+                <span class="ghost-name">Ёкай</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="Fingerprints FreezingTemperatures GhostOrb">
+            <a asp-controller="Ghost" asp-action="Hantu" class="ghost-link">
+                <span class="ghost-name">Ханту</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="EMF Fingerprints DotsProjector">
+            <a asp-controller="Ghost" asp-action="Goryo" class="ghost-link">
+                <span class="ghost-name">Горё</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF GhostWriting Fingerprints">
+            <a asp-controller="Ghost" asp-action="Myling" class="ghost-link">
+                <span class="ghost-name">Мюлинг</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="SpiritBox FreezingTemperatures GhostOrb">
+            <a asp-controller="Ghost" asp-action="Onryo" class="ghost-link">
+                <span style="color:red" class="ghost-name">Онрё</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF SpiritBox FreezingTemperatures">
+            <a asp-controller="Ghost" asp-action="Twins" class="ghost-link">
+                <span class="ghost-name">Близнецы</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="EMF GhostOrb DotsProjector">
+            <a asp-controller="Ghost" asp-action="Raiju" class="ghost-link">
+                <span class="ghost-name">Райдзю</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="EMF Fingerprints GhostOrb">
+            <a asp-controller="Ghost" asp-action="Obake" class="ghost-link">
+                <span class="ghost-name">Обакэ</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="Fingerprints SpiritBox FreezingTemperatures">
+            <a asp-controller="Ghost" asp-action="Mimic" class="ghost-link">
+                <span class="ghost-name">Мимик</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting SpiritBox FreezingTemperatures">
+            <a asp-controller="Ghost" asp-action="Moroi" class="ghost-link">
+                <span class="ghost-name">Морой</span>
+            </a>
+        </li>
+        <li id="ghost1" class="ghost" data-evidence="GhostWriting SpiritBox DotsProjector">
+            <a asp-controller="Ghost" asp-action="Deogen" class="ghost-link">
+                <span class="ghost-name">Деоген</span>
+            </a>
+        </li>
+        <li id="ghost2" class="ghost" data-evidence="GhostWriting GhostOrb DotsProjector">
+            <a asp-controller="Ghost" asp-action="Thaye" class="ghost-link">
+                <span class="ghost-name">Тайэ</span>
+            </a>
+        </li>
+    </ul>
+
+    <script>
+        function toggleEvidence(evidenceId) {
+            var evidenceElement = document.getElementById(evidenceId);
+
+            if (evidenceElement.classList.contains("evidence-selected")) {
+                if (evidenceElement.classList.contains("crossed-out")) {
+                    evidenceElement.classList.remove("evidence-selected", "crossed-out");
+                } else {
+                    evidenceElement.classList.add("crossed-out");
+                }
+            } else {
+                evidenceElement.classList.add("evidence-selected");
+            }
+
+            updateGhostVisibility();
+        }
+
+        function updateGhostVisibility() {
+            var selectedEvidence = document.querySelectorAll(".evidence-selected:not(.crossed-out)");
+            var crossedOutEvidence = document.querySelectorAll(".evidence-selected.crossed-out");
+            var ghosts = document.querySelectorAll(".ghost");
+
+            ghosts.forEach(function (ghost) {
+                var ghostEvidence = ghost.getAttribute("data-evidence").split(" ");
+                var isVisible = true;
+
+                selectedEvidence.forEach(function (evidence) {
+                    if (ghostEvidence.indexOf(evidence.id) === -1) {
+                        isVisible = false;
+                    }
+                });
+
+                crossedOutEvidence.forEach(function (evidence) {
+                    if (ghostEvidence.indexOf(evidence.id) !== -1) {
+                        isVisible = false;
+                    }
+                });
+
+                if (isVisible) {
+                    ghost.style.color = "white";
+                } else {
+                    ghost.style.color = "grey";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
