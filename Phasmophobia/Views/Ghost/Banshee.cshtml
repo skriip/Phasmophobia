@@ -6,10 +6,14 @@
     <title>Фазмафобия: Улики и Призраки</title>
     <style>
         body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
+            color: wheat;
+            font-family: 'Bloody', cursive;
             margin: 0;
+            overflow: hidden;
+            background-image: url("/imag/fon13.jpg");
+            background-repeat: repeat;
+            background-size: cover;
+            position: relative;
         }
 
         h1, h2 {
@@ -29,6 +33,7 @@
 
         .ghost-name {
             font-weight: bold;
+            text-decoration: none;
         }
 
         .evidence-square {
@@ -51,10 +56,6 @@
                 opacity: 0;
             }
 
-        .evidence-list {
-            column-count: 2;
-        }
-
         .evidence-selected .evidence-square::before,
         .evidence-selected.crossed-out .evidence-square::before {
             content: "\2717";
@@ -66,9 +67,23 @@
             color: grey;
         }
 
+        .evidence-selected .evidence-text {
+            color: white;
+            text-decoration: none;
+        }
+
+        .evidence-selected.crossed-out .evidence-text {
+            text-decoration: line-through;
+            color: grey;
+        }
+
         .ghost-link {
             text-decoration: none;
             color: white;
+        }
+
+        .evidence-list {
+            column-count: 2;
         }
     </style>
 </head>
@@ -78,13 +93,29 @@
         <div style="flex: 1;">
             <h2>Улики/Доказательства</h2>
             <ul class="evidence-list">
-                <li id="EMF" onclick="toggleEvidence('EMF')"><span class="evidence-square"></span>ЭМП уровень 5</li>
-                <li id="Fingerprints" onclick="toggleEvidence('Fingerprints')"><span class="evidence-square"></span>Ультрафиолет</li>
-                <li id="FreezingTemperatures" onclick="toggleEvidence('FreezingTemperatures')"><span class="evidence-square"></span>Минусовая температура</li>
-                <li id="GhostOrb" onclick="toggleEvidence('GhostOrb')"><span class="evidence-square"></span>Призрачный огонек</li>
-                <li id="GhostWriting" onclick="toggleEvidence('GhostWriting')"><span class="evidence-square"></span>Записи в блокноте</li>
-                <li id="SpiritBox" onclick="toggleEvidence('SpiritBox')"><span class="evidence-square"></span>Радиоприёмник</li>
-                <li id="DotsProjector" onclick="toggleEvidence('DotsProjector')"><span class="evidence-square"></span>Лазерный проектор</li>
+                <li id="EMF" onclick="toggleEvidence('EMF')">
+                    <span class="evidence-square"></span><span class="evidence-text">ЭМП уровень 5</span>
+                </li>
+                <li id="Fingerprints" onclick="toggleEvidence('Fingerprints')">
+                    <span class="evidence-square"></span><span class="evidence-text">Ультрафиолет</span>
+                </li>
+                <li id="FreezingTemperatures" onclick="toggleEvidence('FreezingTemperatures')">
+                    <span class="evidence-square"></span><span class="evidence-text">Минусовая температура</span>
+                </li>
+                <li id="GhostOrb" onclick="toggleEvidence('GhostOrb')">
+                    <span class="evidence-square"></span><span class="evidence-text">Огонек</span>
+                </li>
+                <li id="GhostWriting" onclick="toggleEvidence('GhostWriting')">
+                    <span class="evidence-square"></span><span class="evidence-text">Блокнот</span>
+                </li>
+                <li id="SpiritBox" onclick="toggleEvidence('SpiritBox')">
+                    <span class="evidence-square"></span><span class="evidence-text">Радио</span>
+                </li>
+                <li id="DotsProjector" onclick="toggleEvidence('DotsProjector')">
+                    <span class="evidence-square"></span><span class="evidence-text">Лазер</span>
+                </li>
+
+                <!-- Добавьте остальные улики -->
             </ul>
 
             <h2>Призраки</h2>
@@ -209,10 +240,12 @@
                         <span class="ghost-name">Тайэ</span>
                     </a>
                 </li>
+                <!-- Добавьте остальных призраков -->
             </ul>
         </div>
         <div style="flex: 1; padding-left: 20px;">
-            <h2>Информация тень</h2>
+            <h2>Информация о призраке</h2>
+
         </div>
     </div>
     <script>
@@ -253,10 +286,14 @@
                     }
                 });
 
+                var ghostNameElement = ghost.querySelector(".ghost-name");
+                var ghostTextElement = ghostNameElement.parentNode;
+
                 if (isVisible) {
-                    ghost.style.color = "white";
+                    ghostNameElement.style.textDecoration = "none";
+                    ghostTextElement.style.color = "white";
                 } else {
-                    ghost.style.color = "grey";
+                    ghostTextElement.style.color = "grey";
                 }
             });
         }
