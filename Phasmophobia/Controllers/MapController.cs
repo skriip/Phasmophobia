@@ -22,6 +22,7 @@ namespace Phasmophobia.Controllers
         {
             return View();
         }
+      
 
         // POST: MapController/Create
         [HttpPost]

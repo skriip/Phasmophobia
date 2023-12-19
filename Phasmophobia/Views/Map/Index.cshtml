@@ -44,16 +44,24 @@
         #location-info {
             margin-top: 20px;
             text-align: center;
+            display: none; /* Скрыть блок изначально */
+            
         }
 
         img {
             width: 300px; /* Укажите размер изображения по вашему усмотрению */
             height: 200px;
             margin-bottom: 5px;
+            cursor: pointer; /* Добавлен курсор pointer для указания, что изображение кликабельно */
         }
 
         .location-name {
             font-size: 12px; /* Размер шрифта названия локации */
+        }
+
+        .location-info-container img {
+            width: 100%;
+            height: 100%; /* Задайте максимальную высоту по вашему усмотрению */
         }
     </style>
 </head>
@@ -62,28 +70,64 @@
     <div class="location-list-container">
         <h3>Выберите локацию</h3>
 
-    <ul class="location-list" id="locationList">
-        <li class="location-list-item" onclick="showLocationInfo(this, 'Bleasdale Farmhouse')"> <img src="/imag/Bleasdale Farmhouse.jpg" alt="Баня"> 
-            <span class="location-name">Bleasdale Farmhouse</span>
-        </li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'Camp Woodwind')"> <img src="/imag/Camp Woodwind.jpg" alt="Кухня"> 
-            <span class="location-name">Camp Woodwin</span>
-        </li>
-        <li class="location-list-item" onclick="showLocationInfo(this, '6 Tanglewood Drive')"> <img src="/imag/6 Tanglewood Drive.jpg" alt="Столовая"> 
-            <span class="location-name">6 Tanglewood Drive</span>
-        </li>
-        <li class="location-list-item" onclick="showLocationInfo(this, '13 Willow Street')"> <img src="/imag/13 Willow Street.jpg" alt="Спальня"> 
-            <span class="location-name">13 Willow Street</span>
-        </li>
-        <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Cour')"> <img src="/imag/10 Ridgeview Court.jpg" alt="Туалет"> 
-            <span class="location-name">10 Ridgeview Cour</span>
-        </li>
-    </ul>
+        <ul class="location-list" id="locationList">
+            <li class="location-list-item" onclick="showLocationInfo(this, 'Bleasdale Farmhouse')">
+                <img src="/imag/Bleasdale Farmhouse.jpg" alt="Bleasdale Farmhouse">
+                <span class="location-name">Bleasdale Farmhouse</span>
+               
+            </li>
+
+            <li class="location-list-item" onclick="showLocationInfo(this, 'Camp Woodwind')">
+                <img src="/imag/Camp Woodwind.jpg" alt="Camp Woodwind">
+                <span class="location-name">Camp Woodwind</span>
+            </li>
+            <li class="location-list-item" onclick="showLocationInfo(this, '6 Tanglewood Drive')">
+                <img src="/imag/6 Tanglewood Drive.jpg" alt="Camp Woodwind">
+                <span class="location-name">6 Tanglewood Drive</span>
+            </li>
+            <li class="location-list-item" onclick="showLocationInfo(this, '13 Willow Street')">
+                <img src="/imag/13 Willow Street.jpg" alt="13 Willow Street">
+                <span class="location-name">13 Willow Street</span>
+            </li>
+            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
+                <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
+                <span class="location-name">10 Ridgeview Cour</span>
+            </li>
+        </ul>
     </div>
 
-    <div id="location-info"></div>
+    <div id="location-info" class="location-info-container">
+        <h2 id="location-title"></h2>
+        <img id="location-image" src="" alt="Локация">
+        <p id="location-description"></p>
+    </div>
 
     <script>
+        // Объект с информацией о локациях
+        var locationsInfo = {
+            'Bleasdale Farmhouse': {
+                image: '/imag/Bleasdale Farmhouse-map.jpg',
+                description: 'деревянный дом'
+            },
+            'Camp Woodwind': {
+                image: '/imag/Phasmophobia-Camp-Woodwind-easter-egg-map.jpg',
+                description: 'Небольшой лагерь.'
+            },
+            '6 Tanglewood Drive': {
+                image: '/imag/Tanglewood-Street-House.jpg',
+                description: 'не плох для начального уровня.'
+            },
+            '13 Willow Street': {
+                image: '/imag/Phasmophobia-Willow-Street-easter-egg-map.jpg',
+                description: 'учиться лучше с него.'
+            },
+            '10 Ridgeview Court': {
+                image: '/imag/Ridgeview_map.jpg',
+                description: '3 этажа счастья.'
+            }
+        };
+      
+
         function showLocationInfo(element, location) {
             // Очистить выделение для всех элементов списка
             var items = document.querySelectorAll('.location-list-item');
@@ -94,10 +138,18 @@
             // Выделить выбранный элемент
             element.classList.add('selected');
 
-            // Отобразить информацию о выбранной локации
+            // Получить элементы
+            var locationTitle = document.getElementById('location-title');
+            var locationImage = document.getElementById('location-image');
+            var locationDescription = document.getElementById('location-description');
+
+            // Установить заголовок, изображение и описание
+            
+            locationTitle.textContent =  location;
+            locationImage.src = locationsInfo[location].image;
+            locationDescription.textContent = locationsInfo[location].description;
             var locationInfo = document.getElementById('location-info');
-            locationInfo.innerHTML = `<h2>Локация: ${location}</h2>`;
-            // Дополнительная логика для отображения информации о выбранной локации
+            locationInfo.style.display = 'block';
         }
     </script>
 </body>
