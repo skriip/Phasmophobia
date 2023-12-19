@@ -326,8 +326,8 @@
             });
         }
           function showInformation() {
-        var ghostInfoBlock = document.getElementById('ghost-info');
-        ghostInfoBlock.innerHTML = `
+         
+         document.getElementById('ghost-info').innerHTML = `
             <h2>Особенности и слабости</h2>
             <p>Улики:</p>
             <ul>
@@ -367,9 +367,8 @@
         }
 
         function showBehavior() {
-            // Логика вывода информации о поведении призрака
-            var ghostInfoBlock = document.getElementById('ghost-info');
-            ghostInfoBlock.innerHTML = `
+            
+            ghostInfoBlock = document.getElementById('ghost-info').innerHTML = `
                     <h2>Поведение</h2>
                    <p>Отсуствуют</p>
                 `;
