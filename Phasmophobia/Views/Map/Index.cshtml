@@ -28,16 +28,22 @@
         #location-info {
             margin-top: 20px;
         }
+
+        img {
+            width: 100px; /* Укажите размер изображения по вашему усмотрению */
+            /*height: 100px;*/
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
 
     <ul class="location-list" id="locationList">
-        <li class="location-list-item" onclick="showLocationInfo(this, 'Баня')">Баня</li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'Кухня')">Кухня</li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'Столовая')">Столовая</li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'Спальня')">Спальня</li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'Туалет')">Туалет</li>
+        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image1')"> <img src="path_to_image1.jpg" alt="Баня"> </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image2')"> <img src="path_to_image2.jpg" alt="Кухня"> </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image3')"> <img src="path_to_image3.jpg" alt="Столовая"> </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image4')"> <img src="path_to_image4.jpg" alt="Спальня"> </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image5')"> <img src="/imag/10 Ridgeview Court.jpg" alt="Туалет"> </li>
     </ul>
 
     <div id="location-info"></div>
