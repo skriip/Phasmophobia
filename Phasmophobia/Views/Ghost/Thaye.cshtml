@@ -107,13 +107,7 @@
 <body>
 
     <h1>Фазмафобия: Улики и Призраки</h1>
-    <div id="buttons-container">
-
-        <button onclick="showInformation()">Информация</button>
-        <button onclick="showStrategy()">Стратегия</button>
-        <button onclick="showBehavior()">Поведение</button>
-
-    </div>
+   
     <div style="display: flex;">
         <div style="flex: 1;">
             <h2>Улики/Доказательства</h2>
@@ -270,7 +264,12 @@
         </div>
 
         <div style="flex: 1; padding-left: 20px;">
-            <h2>Информация о призраке</h2>
+            <div id="buttons-container">
+
+                <button onclick="showInformation()">Информация</button>
+                <button onclick="showStrategy()">Стратегия</button>
+                <button onclick="showBehavior()">Поведение</button>
+            </div>
             <div id="ghost-info"></div>
         </div>
 
