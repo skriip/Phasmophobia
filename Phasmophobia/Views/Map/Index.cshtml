@@ -3,48 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информация о локациях</title>
+    <title>Карты локаций</title>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .location-list-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         .location-list {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
-            background-color: #f0f0f0;
+            /*background-color: #f0f0f0;*/
+            justify-content: center; /* Центрирование элементов по горизонтали */
         }
 
         .location-list-item {
             margin: 5px;
-            padding: 10px;
             cursor: pointer;
             border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 5px solid transparent;
         }
 
         .selected {
             background-color: #3498db;
             color: white;
+            border: 5px solid #3498db;
         }
 
         #location-info {
             margin-top: 20px;
+            text-align: center;
         }
 
         img {
-            width: 100px; /* Укажите размер изображения по вашему усмотрению */
-            /*height: 100px;*/
-            margin-right: 5px;
+            width: 300px; /* Укажите размер изображения по вашему усмотрению */
+            height: 200px;
+            margin-bottom: 5px;
+        }
+
+        .location-name {
+            font-size: 12px; /* Размер шрифта названия локации */
         }
     </style>
 </head>
 <body>
 
+    <div class="location-list-container">
+        <h3>Выберите локацию</h3>
+
     <ul class="location-list" id="locationList">
-        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image1')"> <img src="path_to_image1.jpg" alt="Баня"> </li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image2')"> <img src="path_to_image2.jpg" alt="Кухня"> </li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image3')"> <img src="path_to_image3.jpg" alt="Столовая"> </li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image4')"> <img src="path_to_image4.jpg" alt="Спальня"> </li>
-        <li class="location-list-item" onclick="showLocationInfo(this, 'path_to_image5')"> <img src="/imag/10 Ridgeview Court.jpg" alt="Туалет"> </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, 'Bleasdale Farmhouse')"> <img src="/imag/Bleasdale Farmhouse.jpg" alt="Баня"> 
+            <span class="location-name">Bleasdale Farmhouse</span>
+        </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, 'Camp Woodwind')"> <img src="/imag/Camp Woodwind.jpg" alt="Кухня"> 
+            <span class="location-name">Camp Woodwin</span>
+        </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, '6 Tanglewood Drive')"> <img src="/imag/6 Tanglewood Drive.jpg" alt="Столовая"> 
+            <span class="location-name">6 Tanglewood Drive</span>
+        </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, '13 Willow Street')"> <img src="/imag/13 Willow Street.jpg" alt="Спальня"> 
+            <span class="location-name">13 Willow Street</span>
+        </li>
+        <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Cour')"> <img src="/imag/10 Ridgeview Court.jpg" alt="Туалет"> 
+            <span class="location-name">10 Ridgeview Cour</span>
+        </li>
     </ul>
+    </div>
 
     <div id="location-info"></div>
 
@@ -61,7 +96,7 @@
 
             // Отобразить информацию о выбранной локации
             var locationInfo = document.getElementById('location-info');
-            locationInfo.innerHTML = `<h2>Информация о локации: ${location}</h2>`;
+            locationInfo.innerHTML = `<h2>Локация: ${location}</h2>`;
             // Дополнительная логика для отображения информации о выбранной локации
         }
     </script>
