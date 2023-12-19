@@ -81,10 +81,33 @@
         .evidence-list {
             column-count: 2;
         }
+
+        #buttons-container {
+            margin-left: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+            #buttons-container button {
+                color: white;
+                background: none;
+                border: none;
+                padding: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+
+                #buttons-container button:hover {
+                    color: rgba(255, 255, 255, 0.7);
+                }
     </style>
 </head>
 <body>
+
     <h1>Фазмафобия: Улики и Призраки</h1>
+
     <div style="display: flex;">
         <div style="flex: 1;">
             <h2>Улики/Доказательства</h2>
@@ -126,125 +149,133 @@
                         <span class="ghost-name">Мираж</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="Fingerprints SpiritBox DotsProjector">
+                <li id="ghost3" class="ghost" data-evidence="Fingerprints SpiritBox DotsProjector">
                     <a asp-controller="Ghost" asp-action="Phantom" class="ghost-link">
                         <span class="ghost-name">Фантом</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints SpiritBox">
+                <li id="ghost4" class="ghost" data-evidence="GhostWriting Fingerprints SpiritBox">
                     <a asp-controller="Ghost" asp-action="Poltergeist" class="ghost-link">
                         <span class="ghost-name">Полтергейст</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="Fingerprints GhostOrb DotsProjector">
+                <li id="ghost5" class="ghost" data-evidence="Fingerprints GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Banshee" class="ghost-link">
                         <span class="ghost-name">Банши</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF Fingerprints FreezingTemperatures">
+                <li id="ghost6" class="ghost" data-evidence="EMF Fingerprints FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Jinn" class="ghost-link">
                         <span class="ghost-name">Джинн</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="GhostWriting SpiritBox GhostOrb">
+                <li id="ghost7" class="ghost" data-evidence="GhostWriting SpiritBox GhostOrb">
                     <a asp-controller="Ghost" asp-action="Mare" class="ghost-link">
                         <span class="ghost-name">Мара</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting FreezingTemperatures GhostOrb">
+                <li id="ghost8" class="ghost" data-evidence="GhostWriting FreezingTemperatures GhostOrb">
                     <a asp-controller="Ghost" asp-action="Revenant" class="ghost-link">
                         <span class="ghost-name">Ревенант</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="EMF GhostWriting FreezingTemperatures">
+                <li id="ghost9" class="ghost" data-evidence="EMF GhostWriting FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Shade" class="ghost-link">
                         <span class="ghost-name">Тень</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints FreezingTemperatures">
+                <li id="ghost10" class="ghost" data-evidence="GhostWriting Fingerprints FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Demon" class="ghost-link">
                         <span style="color:red" class="ghost-name">Демон</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="FreezingTemperatures GhostOrb DotsProjector">
+                <li id="ghost11" class="ghost" data-evidence="FreezingTemperatures GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Yurei" class="ghost-link">
                         <span class="ghost-name">Юрэй</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF FreezingTemperatures DotsProjector">
+                <li id="ghost12" class="ghost" data-evidence="EMF FreezingTemperatures DotsProjector">
                     <a asp-controller="Ghost" asp-action="Oni" class="ghost-link">
                         <span class="ghost-name">Они</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="SpiritBox GhostOrb DotsProjector">
+                <li id="ghost13" class="ghost" data-evidence="SpiritBox GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Yokai" class="ghost-link">
                         <span class="ghost-name">Ёкай</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="Fingerprints FreezingTemperatures GhostOrb">
+                <li id="ghost14" class="ghost" data-evidence="Fingerprints FreezingTemperatures GhostOrb">
                     <a asp-controller="Ghost" asp-action="Hantu" class="ghost-link">
                         <span class="ghost-name">Ханту</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="EMF Fingerprints DotsProjector">
+                <li id="ghost15" class="ghost" data-evidence="EMF Fingerprints DotsProjector">
                     <a asp-controller="Ghost" asp-action="Goryo" class="ghost-link">
                         <span class="ghost-name">Горё</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF GhostWriting Fingerprints">
+                <li id="ghost16" class="ghost" data-evidence="EMF GhostWriting Fingerprints">
                     <a asp-controller="Ghost" asp-action="Myling" class="ghost-link">
                         <span class="ghost-name">Мюлинг</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="SpiritBox FreezingTemperatures GhostOrb">
+                <li id="ghost17" class="ghost" data-evidence="SpiritBox FreezingTemperatures GhostOrb">
                     <a asp-controller="Ghost" asp-action="Onryo" class="ghost-link">
                         <span class="ghost-name">Онрё</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF SpiritBox FreezingTemperatures">
+                <li id="ghost18" class="ghost" data-evidence="EMF SpiritBox FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Twins" class="ghost-link">
                         <span class="ghost-name">Близнецы</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="EMF GhostOrb DotsProjector">
+                <li id="ghost19" class="ghost" data-evidence="EMF GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Raiju" class="ghost-link">
                         <span class="ghost-name">Райдзю</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF Fingerprints GhostOrb">
+                <li id="ghost20" class="ghost" data-evidence="EMF Fingerprints GhostOrb">
                     <a asp-controller="Ghost" asp-action="Obake" class="ghost-link">
                         <span class="ghost-name">Обакэ</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="Fingerprints SpiritBox FreezingTemperatures">
+                <li id="ghost21" class="ghost" data-evidence="Fingerprints SpiritBox FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Mimic" class="ghost-link">
                         <span class="ghost-name">Мимик</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting SpiritBox FreezingTemperatures">
+                <li id="ghost22" class="ghost" data-evidence="GhostWriting SpiritBox FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Moroi" class="ghost-link">
                         <span class="ghost-name">Морой</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="GhostWriting SpiritBox DotsProjector">
+                <li id="ghost23" class="ghost" data-evidence="GhostWriting SpiritBox DotsProjector">
                     <a asp-controller="Ghost" asp-action="Deogen" class="ghost-link">
-                        <span class="ghost-name">Деоген</span>
+                        <span  class="ghost-name">Деоген</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting GhostOrb DotsProjector">
+                <li id="ghost24" class="ghost" data-evidence="GhostWriting GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Thaye" class="ghost-link">
                         <span class="ghost-name">Тайэ</span>
                     </a>
                 </li>
-                <!-- Добавьте остальных призраков -->
+
             </ul>
         </div>
-        <div style="flex: 1; padding-left: 20px;">
-            <h2>Информация о призраке</h2>
 
+        <div style="flex: 1; padding-left: 20px;">
+            <div id="buttons-container">
+
+                <button onclick="showInformation()">Информация</button>
+                <button onclick="showStrategy()">Стратегия</button>
+                <button onclick="showBehavior()">Поведение</button>
+            </div>
+            <div id="ghost-info"></div>
         </div>
+
     </div>
     <script>
+        showInformation();
         function toggleEvidence(evidenceId) {
             var evidenceElement = document.getElementById(evidenceId);
 
@@ -293,6 +324,82 @@
                 }
             });
         }
+        function showInformation() {
+            ghostInfo = document.getElementById('ghost-info').innerHTML = `
+                                              <h3>Информация о Демоне</h3>
+
+        <p><strong>Особенности:</strong> Демоны охотятся чаще всех остальных видов.</p>
+        <p><strong>Слабость:</strong> Демоны боятся распятия и будут менее агрессивны, если оно оставлено поблизости.</p>
+
+        <h4>Улики:</h4>
+        <ul>
+            <li>Порог рассудка: 70%</li>
+            <li>Записи в минусовой блокноте</li>
+            <li>Ультрафиолетовая температура</li>
+        </ul>
+
+        <h4>Характеристики призрака:</h4>
+        <ul>
+            <li>Скорость призрака: 1,7 м/с</li>
+            <li>Множитель скорости:</li>
+            <ul>
+                <li>50%</li>
+                <li>75%</li>
+                <li>100%</li>
+                <li>125%</li>
+                <li>150%</li>
+            </ul>
+        </ul>
+
+        <h4>Дополнительная информация:</h4>
+        <ul>
+            <li>Имеет шанс начать охоту выше 70% среднего рассудка команды.</li>
+            <li>Благовония останавливают возможность охоты Демона на 60 секунд.</li>
+            <li>Имеет более короткое время восстановления охоты в 20 секунд.</li>
+            <li>Радиус действия распятия против Демона на 50% больше, чем против других призраков:</li>
+            <ul>
+                <li>Т1: 4,5 м (вместо 3 м)</li>
+                <li>Т2: 6 м (вместо 4 м)</li>
+                <li>T3: 7,5 м (вместо 5 м)</li>
+            </ul>
+        </ul>
+                        `;
+        }
+
+        function showStrategy() {
+            document.getElementById("ghost-info").innerHTML = `
+                                                            <h2>Стратегия: Демон</h2>
+             <p>Чтобы определить Демона по его чертам, игроки могут засечь время между охотами или проследить за признаками очень ранней охоты.
+              Учитывая частоту охот Демона, игрокам необходимо быть более внимательными: нужно взять всё необходимое оборудование, спланировать маршруты до комнаты призрака и до укрытий, приготовить благовония, 
+              чтобы использовать их в непредвиденных ситуациях во время охоты.</p>
+
+        <p>Спринт, возможно, потребуется сохранить при приближении к комнате призрака, чтобы быстро сбежать в случае внезапной охоты.</p>
+
+        <p>Благодаря увеличенному радиусу действия распятия, предотвратить охоту будет проще, особенно в помещениях маленького и среднего размера, таких как гаражи или коридоры домов. 
+        Однако, в больших помещениях, таких как баскетбольная площадка на карте «Brownstone High School», все ещё могут возникнуть трудности.</p>
+
+                                                                                                                                    `;
+        }
+
+
+        function showBehavior() {
+            document.getElementById("ghost-info").innerHTML = `
+                 <h2>Поведение: Демон   </h2>
+         <p>У Демона есть способность, которая позволяет ему автоматически начинать охоту, независимо от текущего среднего уровня рассудка. Нет особого поведения или условия (например, требование прямой видимости с игроком), которое влияет на это; если он решит использовать свою способность, он будет охотиться.
+
+        Распятия могут предотвратить эту охоту, как и любую другую не проклятую охоту.</p>
+
+        <p>Демон может начать охоту, когда средний уровень рассудка составляет 70% вместо обычного порога в 50% для большинства других призраков. Кроме того, у Демона есть отдельная способность, которая позволяет ему начинать охоту выше 70% среднего уровня рассудка команды.</p>
+
+        <p>После охоты призраку типа "Демон" потребуется 20 секунд, чтобы начать следующую атаку, вместо обычных 25 секунд, как у других призраков.</p>
+
+        <p>Использование благовония предотвращает охоту призрака типа "Демон" на 60 секунд, вместо стандартных 90 секунд.</p>
+
+        <p>Радиус действия распятия против Демона на 50% больше, чем против других призраков.</p>
+
+                                                                                                                                    `;
+        }
+
     </script>
 </body>
 </html>
