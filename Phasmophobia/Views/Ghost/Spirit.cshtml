@@ -52,10 +52,6 @@
                 opacity: 0;
             }
 
-        .evidence-list {
-            column-count: 2;
-        }
-
         .evidence-selected .evidence-square::before,
         .evidence-selected.crossed-out .evidence-square::before {
             content: "\2717";
@@ -67,33 +63,91 @@
             color: grey;
         }
 
+        .evidence-selected .evidence-text {
+            color: white;
+            text-decoration: none;
+        }
+
+        .evidence-selected.crossed-out .evidence-text {
+            text-decoration: line-through;
+            color: grey;
+        }
+
         .ghost-link {
             text-decoration: none;
             color: white;
         }
-       
+
+        .evidence-list {
+            column-count: 2;
+        }
+
+        #buttons-container {
+            margin-left: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+            #buttons-container button {
+                color: white;
+                background: none;
+                border: none;
+                padding: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+
+                #buttons-container button:hover {
+                    color: rgba(255, 255, 255, 0.7);
+                }
     </style>
 </head>
 <body>
+
     <h1>Фазмафобия: Улики и Призраки</h1>
+    <div id="buttons-container">
+
+        <button onclick="showInformation()">Информация</button>
+        <button onclick="showStrategy()">Стратегия</button>
+        <button onclick="showBehavior()">Поведение</button>
+
+    </div>
     <div style="display: flex;">
         <div style="flex: 1;">
             <h2>Улики/Доказательства</h2>
             <ul class="evidence-list">
-                <li id="EMF" onclick="toggleEvidence('EMF')"><span class="evidence-square"></span>ЭМП уровень 5</li>
-                <li id="Fingerprints" onclick="toggleEvidence('Fingerprints')"><span class="evidence-square"></span>Ультрафиолет</li>
-                <li id="FreezingTemperatures" onclick="toggleEvidence('FreezingTemperatures')"><span class="evidence-square"></span>Минусовая температура</li>
-                <li id="GhostOrb" onclick="toggleEvidence('GhostOrb')"><span class="evidence-square"></span>Призрачный огонек</li>
-                <li id="GhostWriting" onclick="toggleEvidence('GhostWriting')"><span class="evidence-square"></span>Записи в блокноте</li>
-                <li id="SpiritBox" onclick="toggleEvidence('SpiritBox')"><span class="evidence-square"></span>Радиоприёмник</li>
-                <li id="DotsProjector" onclick="toggleEvidence('DotsProjector')"><span class="evidence-square"></span>Лазерный проектор</li>
-            </ul>
+                <li id="EMF" onclick="toggleEvidence('EMF')">
+                    <span class="evidence-square"></span><span class="evidence-text">ЭМП уровень 5</span>
+                </li>
+                <li id="Fingerprints" onclick="toggleEvidence('Fingerprints')">
+                    <span class="evidence-square"></span><span class="evidence-text">Ультрафиолет</span>
+                </li>
+                <li id="FreezingTemperatures" onclick="toggleEvidence('FreezingTemperatures')">
+                    <span class="evidence-square"></span><span class="evidence-text">Минусовая температура</span>
+                </li>
+                <li id="GhostOrb" onclick="toggleEvidence('GhostOrb')">
+                    <span class="evidence-square"></span><span class="evidence-text">Огонек</span>
+                </li>
+                <li id="GhostWriting" onclick="toggleEvidence('GhostWriting')">
+                    <span class="evidence-square"></span><span class="evidence-text">Блокнот</span>
+                </li>
+                <li id="SpiritBox" onclick="toggleEvidence('SpiritBox')">
+                    <span class="evidence-square"></span><span class="evidence-text">Радио</span>
+                </li>
+                <li id="DotsProjector" onclick="toggleEvidence('DotsProjector')">
+                    <span class="evidence-square"></span><span class="evidence-text">Лазер</span>
+                </li>
 
+                <!-- Добавьте остальные улики -->
+            </ul>
+            
             <h2>Призраки</h2>
             <ul class="ghost-list">
                 <li id="ghost1" class="ghost" data-evidence="EMF GhostWriting SpiritBox">
                     <a asp-controller="Ghost" asp-action="Spirit" class="ghost-link">
-                        <span style="color:red" class="ghost-name">Дух</span>
+                        <span class="ghost-name">Дух</span>
                     </a>
                 </li>
                 <li id="ghost2" class="ghost" data-evidence="EMF SpiritBox DotsProjector">
@@ -138,7 +192,7 @@
                 </li>
                 <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Demon" class="ghost-link">
-                        <span class="ghost-name">Демон</span>
+                        <span style="color:red" class="ghost-name">Демон</span>
                     </a>
                 </li>
                 <li id="ghost1" class="ghost" data-evidence="FreezingTemperatures GhostOrb DotsProjector">
@@ -211,43 +265,18 @@
                         <span class="ghost-name">Тайэ</span>
                     </a>
                 </li>
+                <!-- Добавьте остальных призраков -->
             </ul>
         </div>
+
         <div style="flex: 1; padding-left: 20px;">
             <h2>Информация о призраке</h2>
-            <p id="ghost-info">Выберите призрака из списка, чтобы увидеть информацию.</p>
-            <p id="ghost-features">Особенности и слабости:</p>
-            <ul>
-                <li>
-                    Улики:
-                    <ul>
-                        <li>ЭМП (ур. 5)</li>
-                        <li>ЭМП (ур. 5)</li>
-                        <li>Радиоприёмник</li>
-                        <li>Радиоприёмник</li>
-                        <li>Записи в блокноте</li>
-                        <li>Записи в блокноте</li>
-                    </ul>
-                </li>
-                <li>Порог рассудка: 50%</li>
-                <li>Скорость призрака: 1,7 м/с🔊</li>
-                <li>
-                    Множитель скорости:
-                    <ul>
-                        <li>50%</li>
-                        <li>75%</li>
-                        <li>100%</li>
-                        <li>125%</li>
-                        <li>150%</li>
-                    </ul>
-                </li>
-                <li>
-                    Дополнительная информация: При использовании благовония возл
-                </li>
-            </ul>
+            <div id="ghost-info"></div>
         </div>
+
     </div>
     <script>
+        showInformation();
         function toggleEvidence(evidenceId) {
             var evidenceElement = document.getElementById(evidenceId);
 
@@ -285,12 +314,65 @@
                     }
                 });
 
+                var ghostNameElement = ghost.querySelector(".ghost-name");
+                var ghostTextElement = ghostNameElement.parentNode;
+
                 if (isVisible) {
-                    ghost.style.color = "white";
+                    ghostNameElement.style.textDecoration = "none";
+                    ghostTextElement.style.color = "white";
                 } else {
-                    ghost.style.color = "grey";
+                    ghostTextElement.style.color = "grey";
                 }
             });
+        }
+          function showInformation() {
+        var ghostInfoBlock = document.getElementById('ghost-info');
+        ghostInfoBlock.innerHTML = `
+            <h2>Особенности и слабости</h2>
+            <p>Улики:</p>
+            <ul>
+                <li>ЭМП (ур. 5)</li>
+                <li>Радиоприёмник</li>
+                <li>Записи в блокноте</li>
+            </ul>
+            <p>Порог рассудка: 50%</p>
+            <p>Скорость призрака: 1,7 м/с🔊</p>
+            <p>Множитель скорости:</p>
+            <ul>
+                <li>50%</li>
+                <li>75%</li>
+                <li>100%</li>
+                <li>125%</li>
+                <li>150%</li>
+            </ul>
+            <p>Дополнительная информация:</p>
+            <p>При использовании благовония возле Духа, он не сможет начать охоту в течение 180 секунд (вместо обычных 90 секунд).</p>
+            <p>Иногда может быть более активным, чем другие призраки из-за того, что делает короткие паузы между взаимодействиями.</p>
+        `;
+    }
+
+        function showStrategy() {
+            document.getElementById("ghost-info").innerHTML = `
+                <h2>Стратегия: Дух</h2>
+                <p>Без особых способностей и с более жесткой реакцией на благовония, Духи служат основой для сравнения с другими призраками.
+                Поскольку их поведение не является особенно уникальным среди призраков, это отсутствие определяющих черт может сбить с толку следователей;
+                поэтому, если не будет установлено чётких доказательств, Дух может быть легко принят за другую сущность.</p>
+
+                <p>Основной (и обычно единственный) способ проверить наличие Духа без снизить среднее значение рассудка до уровня ниже 50% и обкурить призрака;
+                 если он начнёт охоту до истечения трёх минут, это не Дух. Если же он начнёт охоту только через три минуты, это очень вероятно (хотя и не окончательно) Дух.
+                 Обратите внимание, что если он начал охоту в течение первой минуты после использования благовония, то благовоние не сработало, и игрок должен попытаться обкурить его снова.
+                 На уровне сложности Кошмар и Безумие игроки должны дождаться охоты или сожжённого распятия, чтобы подтвердить, что средний уровень рассудка достаточно низок.</p>
+               
+            `;
+        }
+
+        function showBehavior() {
+            // Логика вывода информации о поведении призрака
+            var ghostInfoBlock = document.getElementById('ghost-info');
+            ghostInfoBlock.innerHTML = `
+                    <h2>Поведение</h2>
+                   <p>Отсуствуют</p>
+                `;
         }
     </script>
 </body>
