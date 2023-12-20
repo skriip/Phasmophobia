@@ -81,7 +81,7 @@ body {
     padding-top: 100px;
     background-position: top center;
     background-repeat: no-repeat;
-    padding-bottom: 380px;
+    padding-bottom: 150px;
     overflow: hidden;
 }
 .haus-image {
@@ -125,7 +125,7 @@ body {
     padding-top: 100px;
     background-position: top center;
     background-repeat: no-repeat;
-    padding-bottom: 380px;
+    padding-bottom: 150px;
     overflow: hidden;
 }
 
@@ -162,5 +162,96 @@ body {
 }
 
 
+
+
+.Oborudca {
+    /* background-image: url("../images/fon1.png");
+    position: absolute;
     
+    opacity: 0.3;*/
+
+    padding-top: 100px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding-bottom: 280px;
+    overflow: hidden;
+}
+
+.Oborudca-image {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    padding-left: 50px;
+    padding-bottom: 380px;
+}
+
+.Oborudca .container {
+    right: calc(100% - 764px);
+    padding-right: 280px;
+    padding-left: 20px;
+    padding-bottom: 280px;
+    position: relative;
+}
+
+
+
+.Oborudca-form {
+    border-radius: 16px;
+    border: 1px solid #316d92;
+    background: #2a465c;
+    margin-top: 60px;
+    width: 426px;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    margin-left: 674px;
+}
+
+.Oborudca-form-text {
+    padding-bottom: 8px;
+    font-size: 44px;
+    line-height: 29px;
+    text-align: center;
+}
+
+
+
+.fyrgon {
+    padding-top: 100px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding-bottom: 150px;
+    overflow: hidden;
+}
+
+    .fyrgon .container {
+        padding-left: 50px;
+        padding-bottom: 380px;
+        position: relative;
+    }
+
+.fyrgon-image {
+    position: absolute;
+    top: 0;
+    right: calc(100% - 964px);
+    z-index: -1;
+    padding-right: 280px;
+}
+
+.fyrgon-form {
+    border-radius: 16px;
+    border: 1px solid #316d92;
+    background: #2a465c;
+    margin-top: 60px;
+    width: 426px;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    margin-left: 674px;
+}
+
+.fyrgon-form-text {
+    padding-bottom: 8px;
+    font-size: 44px;
+    line-height: 29px;
+    text-align: center;
+}
 
