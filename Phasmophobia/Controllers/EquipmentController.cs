@@ -10,7 +10,30 @@ namespace Phasmophobia.Controllers
         {
             return View();
         }
-
+        public ActionResult LaserDots()
+        {
+            return View();
+        }
+        public ActionResult Emf5()
+        {
+            return View();
+        }
+        public ActionResult GhostBook()
+        {
+            return View();
+        }
+        public ActionResult SpiritBox()
+        {
+            return View();
+        }
+        public ActionResult Termometr()
+        {
+            return View();
+        }
+        public ActionResult UvLigth()
+        {
+            return View();
+        }
         // GET: EquipmentController/Details/5
         public ActionResult Details(int id)
         {
