@@ -20,11 +20,12 @@ body {
 /* glavnay*/
 
 .faztex {
-    font-size: 104px;
+    font-size: 124px;
     line-height: 29px;
     padding: 24px 0;
     padding-top: 250px;
     font-weight:600;
+    letter-spacing: 0.2ex;
 }
 
 .order {
@@ -32,7 +33,7 @@ body {
     position: absolute;
     
     opacity: 0.3;*/
-    
+    margin-top :150px;
     padding-top: 100px;
     background-position: top center;
     background-repeat: no-repeat;
