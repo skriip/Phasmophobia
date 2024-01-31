@@ -1,4 +1,93 @@
-﻿@page
-@model Phasmophobia.Views.Equipment.Emf5Model
-@{
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фазмафобия: Улики и Призраки</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Bloody', cursive;
+            margin: 0;
+        }
+
+             
+
+        .equip-list {
+            list-style-type: none;
+            column-gap: 10px;
+            padding: 0;
+        
+            column-count: 3;
+        }
+
+        .eq-link {
+            text-decoration: none;
+            color: white;
+        }
+
+        .img1 {
+            width: 50%;  
+            height: auto;
+        }
+
+        #buttons-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+            #buttons-container button {
+                color: white;
+                background: none;
+                border: none;
+                padding: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+
+                #buttons-container button:hover {
+                    color: rgba(255, 255, 255, 0.7);
+                }
+    </style>
+</head>
+<body>
+    - var datas = { strawberry: 'The garden strawberry (or simply strawberry /ˈstrɔːbᵊri/; Fragaria × ananassa) is a widely grown hybrid species of the genus Fragaria (collectively known as the strawberries)', banana: 'A banana is an edible fruit, botanically a berry, produced by several kinds of large herbaceous flowering plants in the genus Musa.', apple: 'The apple tree (Malus domestica) is a deciduous tree in the rose family best known for its sweet, pomaceous fruit, the apple. It is cultivated worldwide as a fruit tree, and is the most widely grown species in the genus Malus.', orange: 'The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae.' };
+
+body
+  #scene
+    #left-zone
+      ul.list
+        each val, index in datas
+          li.item
+            if index == "strawberry"
+              input(
+                type="radio",
+                id='radio_' + val,
+                name="basic_carousel",
+                value=val,
+                checked
+              )
+            else
+              input(
+                type="radio",
+                id='radio_' + val,
+                name="basic_carousel",
+                value=val
+              ) 
+
+            label(for='radio_' + val, class='label_' + index)
+              | #{index}
+            div(class='content content_' + index)
+              span.picto
+              h1
+                | #{index}
+              p
+                | #{val}
+    #middle-border
+    #right-zone
+
+    </body>
+</html>

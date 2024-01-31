@@ -12,7 +12,7 @@
             margin: 0;
         }
 
-       
+             
 
         .equip-list {
             list-style-type: none;
@@ -28,7 +28,7 @@
         }
 
         .img1 {
-            width: 50%; /* Adjust the width of the image inside the link */
+            width: 50%;  
             height: auto;
         }
 
@@ -59,49 +59,116 @@
             <ul class="equip-list">
                <li>
                    <a asp-controller="Equipment" asp-action="LaserDots" class="eq-link">
-                        <img class="img1" src="~/imag/laser.png" alt="Лазер">
+                        <img class="img1" src="~/imag/Equipment/laser.png" alt="Лазер">
                     </a>
                 </li>
                  <li>
                     <a asp-controller="Equipment" asp-action="Emf5" class="eq-link">
-                        <img class="img1" src="~/imag/emf.png" alt="ЭМП">
+                        <img class="img1" src="~/imag/Equipment/emf.png" alt="ЭМП">
                     </a>
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="UvLigth" class="eq-link">
-                        <img class="img1" src="~/imag/uvl.png" alt="УФ">
+                        <img class="img1" src="~/imag/Equipment/uvl.png" alt="УФ">
                     </a>
                 </li>
                  <li>
                     <a asp-controller="Equipment" asp-action="GhostBook" class="eq-link">
-                        <img class="img1" src="~/imag/book.png" alt="Блокнот">
+                        <img class="img1" src="~/imag/Equipment/book.png" alt="Блокнот">
                     </a>
                 </li>
                  <li>
-                    <a asp-controller="Eq uipment" asp-action="Termometr" class="eq-link">
-                        <img class="img1" src="~/imag/termo.png" alt="Термо">
+                    <a asp-controller="Equipment" asp-action="Termometr" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/termo.png" alt="Термо">
                     </a>
                 </li>
                  <li>
-                    <a asp-controller="Eq uipment" asp-action="SpiritBox" class="eq-link">
-                        <img class="img1" src="~/imag/spir.png" alt="Радио">
+                    <a asp-controller="Equipment" asp-action="SpiritBox" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/spir.png" alt="Радио">
                     </a>
                 </li>
-                <!-- Repeat for other list items -->
+                 <li>
+                   <a asp-controller="Equipment" asp-action="Flashlight" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/light.png" alt="Фонарик">
+
+                   </a>
+               <li>
+                   <a asp-controller="Equipment" asp-action="Incense" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/blagovi.png" alt="Благование">
+                    </a>
+                </li>
+                 <li>
+                    <a asp-controller="Equipment" asp-action="Crucifix" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/raspit.png" alt="Распятие">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Salt" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/Salt.png" alt="Соль">
+                    </a>
+                </li>
+                 <li>
+                    <a asp-controller="Equipment" asp-action="VideoCamera" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/cameravideo.png" alt="Видеокамера">
+                    </a>
+                </li>
+                 <li>
+                    <a asp-controller="Equipment" asp-action="PhotoCamera" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/photocamera.png" alt="Фотоаппарат">
+                    </a>
+                </li>
+                 <li>
+                    <a asp-controller="Equipment" asp-action="MotionSensor" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/datchDvi.png" alt="Датчик движения">
+                    </a>
+                </li>
+                 <li>
+                   <a asp-controller="Equipment" asp-action=" SoundSensor" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/datchZvuk.png" alt="Датчик звука">
+
+                   </a>
+              </li>
+                  <li>
+                   <a asp-controller="Equipment" asp-action="Sedative" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/Lecar.png" alt="Успокоительное">
+
+                   </a>
+               <li>
+                   <a asp-controller="Equipment" asp-action="HeadMount " class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/krepHead.png" alt="Крепление на голову">
+                    </a>
+                </li>
+                 <li>
+                    <a asp-controller="Equipment" asp-action="DirectionalMicrophone" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/microNaprav.png" alt="Направленный микрофон">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Lamp" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/Svecha.png" alt="Свеча">
+                    </a>
+                </li>
+                 <li>
+                    <a asp-controller="Equipment" asp-action="Lighter" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/Ognivo.png" alt="Зажигалка">
+                    </a>
+                </li>
+                 <li>
+                    <a asp-controller="Equipment" asp-action="Tripod" class="eq-link">
+                        <img class="img1" src="~/imag/Equipment/Shtat.png" alt="Штатив">
+                    </a>
+                </li>
             </ul>
         </div>
-
         <div style="flex: 1; padding-left: 20px;">
             <div id="buttons-container">
                 <button onclick="showInformation()">Информация</button>
-                <button onclick="showStrategy()">Тир 1</button>
-                <button onclick="showBehavior()">Тир 2</button>
-                <button onclick="showМehavior()">Тир 3</button>
+                <button onclick="showTir1()">Тир 1</button>
+                <button onclick="showTir2()">Тир 2</button>
+                <button onclick="showTir3()">Тир 3</button>
             </div>
             <div id="ghost-info"></div>
-            <audio controls="controls">
-                <source src="~/audio/banshee_sound.mp3" type="audio/mpeg" />
-            </audio>
+           
         </div>
     </div>
     <script>
@@ -147,7 +214,7 @@
     `;
     }
 
-    function showStrategy() {
+    function showTir1() {
     document.getElementById("ghost-info").innerHTML = `
     <h2>Стратегия: Демон</h2>
     <p>
@@ -167,7 +234,7 @@
     }
 
 
-    function showBehavior() {
+    function showTir2() {
     document.getElementById("ghost-info").innerHTML = `
     <h2>Поведение: Демон   </h2>
     <p>
@@ -186,7 +253,13 @@
 
     `;
     }
+    function showTir3 () {
+    document.getElementById("ghost-info").innerHTML = `
+    <h2>Поведение2: Демон   </h2>
+    
 
+    `;
+    }
     </script>
 </body>
 </html>

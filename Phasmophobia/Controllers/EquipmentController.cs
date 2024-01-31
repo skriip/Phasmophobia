@@ -34,6 +34,63 @@ namespace Phasmophobia.Controllers
         {
             return View();
         }
+        public ActionResult Crucifix()
+        {
+            return View();
+        }
+        public ActionResult DirectionalMicrophone()
+        {
+            return View();
+        }
+        public ActionResult Flashlight()
+        {
+            return View();
+        }
+        public ActionResult HeadMount()
+        {
+            return View();
+        }
+        public ActionResult Incense()
+        {
+            return View();
+        }
+        public ActionResult Lamp()
+        {
+            return View();
+        }
+        public ActionResult Lighter()
+        {
+            return View();
+        }
+        public ActionResult MotionSencer()
+        {
+            return View();
+        }
+        public ActionResult PhotoCamera()
+        {
+            return View();
+        }
+        public ActionResult VideoCamera()
+        {
+            return View();
+        }
+        public ActionResult Salt()
+        {
+            return View();
+        }
+        public ActionResult Sedative()
+        {
+            return View();
+        }
+        public ActionResult SoundSensor()
+        {
+            return View();
+        }
+        public ActionResult Tripod()
+        {
+            return View();
+        }
+       
         // GET: EquipmentController/Details/5
         public ActionResult Details(int id)
         {
