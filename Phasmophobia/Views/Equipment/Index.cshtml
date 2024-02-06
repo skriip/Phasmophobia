@@ -13,25 +13,35 @@
             margin: 0;
         }
 
-             
 
-        .equip-list {
-            list-style-type: none;
-            column-gap: 10px;
-            padding: 0;
-        
-            column-count: 3;
-        }
+
 
         .eq-link {
             text-decoration: none;
             color: white;
         }
 
+
         .img1 {
-            width: 50%;  
+            width: 50%;
             height: auto;
         }
+
+        .equip-list {
+            list-style-type: none;
+            column-gap: 10px;
+            padding: 0;
+            column-count: 3;
+        }
+
+
+        .slide {
+            width: 50%;
+            height: auto;
+        }
+
+
+
 
         #buttons-container {
             margin-top: 20px;
@@ -58,105 +68,143 @@
     <div style="display: flex;">
         <div style="flex: 1;">
             <ul class="equip-list">
-               <li>
-                   <a asp-controller="Equipment" asp-action="LaserDots" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/laser.png" alt="Лазер">
+                <li>
+                    <a asp-controller="Equipment" asp-action="LaserDots" class="eq-link">
+                        <img class="slide" src="~/imag/Equipment/tir1/laser.png" alt="Лазер">
+                        <img class="slide" src="~/imag/Equipment/tir2/laser2.png" alt="ЭМП">
+                        <img class="slide" src="~/imag/Equipment/tir3/laser3.png" alt="ЭМП">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="Emf5" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/emf.png" alt="ЭМП">
+                        <img class="slide" src="~/imag/Equipment/tir1/emf.png" alt="ЭМП">
+                        <img class="slide" src="~/imag/Equipment/tir2/emf2.png" alt="ЭМП">
+                        <img class="slide" src="~/imag/Equipment/tir3/emf3.png" alt="ЭМП">
                     </a>
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="UvLigth" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/uvl.png" alt="УФ">
+                        <img class="slide" src="~/imag/Equipment/tir1/uvl.png" alt="УФ">
+                        <img class="slide" src="~/imag/Equipment/tir2/ulv2.png" alt="УФ">
+                        <img class="slide" src="~/imag/Equipment/tir3/uvl3.png" alt="УФ">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="GhostBook" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/book.png" alt="Блокнот">
+                        <img class="slide" src="~/imag/Equipment/tir1/book.png" alt="Блокнот">
+                        <img class="slide" src="~/imag/Equipment/tir2/book2.png" alt="Блокнот">
+                        <img class="slide" src="~/imag/Equipment/tir3/book3.png" alt="Блокнот">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="Termometr" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/termo.png" alt="Термо">
+                        <img class="slide" src="~/imag/Equipment/tir1/termo.png" alt="Термо">
+                        <img class="slide" src="~/imag/Equipment/tir2/termo2.png" alt="Термо">
+                        <img class="slide" src="~/imag/Equipment/tir3/termo3.png" alt="Термо">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="SpiritBox" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/spir.png" alt="Радио">
+                        <img class="slide" src="~/imag/Equipment/tir1/spir.png" alt="Радио">
+                        <img class="slide" src="~/imag/Equipment/tir2/spiritbox2.png" alt="Радио">
+                        <img class="slide" src="~/imag/Equipment/tir3/spir3.png" alt="Радио">
                     </a>
                 </li>
-                 <li>
-                   <a asp-controller="Equipment" asp-action="Flashlight" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/light.png" alt="Фонарик">
-
-                   </a>
-               <li>
-                   <a asp-controller="Equipment" asp-action="Incense" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/blagovi.png" alt="Благование">
+                <li>
+                    <a asp-controller="Equipment" asp-action="Flashlight" class="eq-link">
+                        <img class="slide" src="~/imag/Equipment/tir1/light.png" alt="Фонарик">
+                        <img class="slide" src="~/imag/Equipment/tir2/light2.png" alt="Фонарик">
+                        <img class="slide" src="~/imag/Equipment/tir3/lignt3.png" alt="Фонарик">
+                    </a>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Incense" class="eq-link">
+                        <img class="slide" src="~/imag/Equipment/tir1/blagovi.png" alt="Благование">
+                        <img class="slide" src="~/imag/Equipment/tir2/blag2.png" alt="Благование">
+                        <img class="slide" src="~/imag/Equipment/tir3/blag3.png" alt="Благование">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="Crucifix" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/raspit.png" alt="Распятие">
+                        <img class="slide" src="~/imag/Equipment/tir1/raspit.png" alt="Распятие">
+                        <img class="slide" src="~/imag/Equipment/tir2/cir2.png" alt="Распятие">
+                        <img class="slide" src="~/imag/Equipment/tir3/cir3.png" alt="Распятие">
                     </a>
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="Salt" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/Salt.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir1/Salt.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir2/salt2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/salt3.png" alt="Соль">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="VideoCamera" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/cameravideo.png" alt="Видеокамера">
+                        <img class="slide" src="~/imag/Equipment/tir1/cameravideo.png" alt="Видеокамера">
+                        <img class="slide" src="~/imag/Equipment/tir2/camera2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/video3.png" alt="Видеокамера">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="PhotoCamera" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/photocamera.png" alt="Фотоаппарат">
+                        <img class="slide" src="~/imag/Equipment/tir1/photocamera.png" alt="Фотоаппарат">
+                        <img class="slide" src="~/imag/Equipment/tir2/photo2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/phot3.png" alt="Фотоаппарат">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="MotionSensor" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/datchDvi.png" alt="Датчик движения">
+                        <img class="slide" src="~/imag/Equipment/tir1/datchDvi.png" alt="Датчик движения">
+                        <img class="slide" src="~/imag/Equipment/tir2/dtdviz2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/dtdviz3.png" alt="Датчик движения">
                     </a>
                 </li>
-                 <li>
-                   <a asp-controller="Equipment" asp-action=" SoundSensor" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/datchZvuk.png" alt="Датчик звука">
+                <li>
+                    <a asp-controller="Equipment" asp-action=" SoundSensor" class="eq-link">
+                        <img class="slide" src="~/imag/Equipment/tir1/datchZvuk.png" alt="Датчик звука">
+                        <img class="slide" src="~/imag/Equipment/tir2/dtsoun2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/dtsound3.png" alt="Датчик звука">
 
-                   </a>
-              </li>
-                  <li>
-                   <a asp-controller="Equipment" asp-action="Sedative" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/Lecar.png" alt="Успокоительное">
-
-                   </a>
-               <li>
-                   <a asp-controller="Equipment" asp-action="HeadMount " class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/krepHead.png" alt="Крепление на голову">
                     </a>
                 </li>
-                 <li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Sedative" class="eq-link">
+                        <img class="slide" src="~/imag/Equipment/tir1/Lecar.png" alt="Успокоительное">
+                        <img class="slide" src="~/imag/Equipment/tir2/usp2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/usp3.png" alt="Успокоительное">
+                    </a>
+                <li>
+                    <a asp-controller="Equipment" asp-action="HeadMount " class="eq-link">
+                        <img class="slide" src="~/imag/Equipment/tir1/krepHead.png" alt="Крепление на голову">
+                        <img class="slide" src="~/imag/Equipment/tir2/head2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/head3.png" alt="Крепление на голову">
+                    </a>
+                </li>
+                <li>
                     <a asp-controller="Equipment" asp-action="DirectionalMicrophone" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/microNaprav.png" alt="Направленный микрофон">
+                        <img class="slide" src="~/imag/Equipment/tir1/microNaprav.png" alt="Направленный микрофон">
+                        <img class="slide" src="~/imag/Equipment/tir2/naprmicro2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/micko3.png" alt="Направленный микрофон">
                     </a>
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="Lamp" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/Svecha.png" alt="Свеча">
+                        <img class="slide" src="~/imag/Equipment/tir1/Svecha.png" alt="Свеча">
+                        <img class="slide" src="~/imag/Equipment/tir2/svecha2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/svecha3.png" alt="Свеча">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="Lighter" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/Ognivo.png" alt="Зажигалка">
+                        <img class="slide" src="~/imag/Equipment/tir1/Ognivo.png" alt="Зажигалка">
+                        <img class="slide" src="~/imag/Equipment/tir2/ognivo2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/ognivo3.png" alt="Зажигалка">
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a asp-controller="Equipment" asp-action="Tripod" class="eq-link">
-                        <img class="img1" src="~/imag/Equipment/Shtat.png" alt="Штатив">
+                        <img class="slide" src="~/imag/Equipment/tir1/Shtat.png" alt="Штатив">
+                        <img class="slide" src="~/imag/Equipment/tir2/trip2.png" alt="Соль">
+                        <img class="slide" src="~/imag/Equipment/tir3/trip3.png" alt="Штатив">
                     </a>
                 </li>
             </ul>
@@ -164,103 +212,71 @@
         <div style="flex: 1; padding-left: 20px;">
             <div id="buttons-container">
                 <button onclick="showInformation()">Информация</button>
+
                 <button onclick="showTir1()">Тир 1</button>
                 <button onclick="showTir2()">Тир 2</button>
                 <button onclick="showTir3()">Тир 3</button>
+
             </div>
             <div id="ghost-info"></div>
-           
+
         </div>
     </div>
     <script>
-    function showInformation() {
-    ghostInfo = document.getElementById('ghost-info').innerHTML = `
-    <h3>Информация о Демоне</h3>
+        function showInformation() {
+            ghostInfo = document.getElementById('ghost-info').innerHTML = `
+            <h3>Информация о </h3>
 
-    <p><strong>Особенности:</strong> Демоны охотятся чаще всех остальных видов.</p>
-    <p><strong>Слабость:</strong> Демоны боятся распятия и будут менее агрессивны, если оно оставлено поблизости.</p>
+            позже
+            `;
+        }
 
-    <h4>Улики:</h4>
-    <ul>
-        <li>Порог рассудка: 70%</li>
-        <li>Записи в минусовой блокноте</li>
-        <li>Ультрафиолетовая температура</li>
-    </ul>
-
-    <h4>Характеристики призрака:</h4>
-    <ul>
-        <li>Скорость призрака: 1,7 м/с</li>
-        <li>Множитель скорости:</li>
-        <ul>
-            <li>50%</li>
-            <li>75%</li>
-            <li>100%</li>
-            <li>125%</li>
-            <li>150%</li>
-        </ul>
-    </ul>
-
-    <h4>Дополнительная информация:</h4>
-    <ul>
-        <li>Имеет шанс начать охоту выше 70% среднего рассудка команды.</li>
-        <li>Благовония останавливают возможность охоты Демона на 60 секунд.</li>
-        <li>Имеет более короткое время восстановления охоты в 20 секунд.</li>
-        <li>Радиус действия распятия против Демона на 50% больше, чем против других призраков:</li>
-        <ul>
-            <li>Т1: 4,5 м (вместо 3 м)</li>
-            <li>Т2: 6 м (вместо 4 м)</li>
-            <li>T3: 7,5 м (вместо 5 м)</li>
-        </ul>
-    </ul>
-    `;
-    }
-
-    function showTir1() {
-    document.getElementById("ghost-info").innerHTML = `
-    <h2>Стратегия: Демон</h2>
-    <p>
-        Чтобы определить Демона по его чертам, игроки могут засечь время между охотами или проследить за признаками очень ранней охоты.
-        Учитывая частоту охот Демона, игрокам необходимо быть более внимательными: нужно взять всё необходимое оборудование, спланировать маршруты до комнаты призрака и до укрытий, приготовить благовония,
-        чтобы использовать их в непредвиденных ситуациях во время охоты.
-    </p>
-
-    <p>Спринт, возможно, потребуется сохранить при приближении к комнате призрака, чтобы быстро сбежать в случае внезапной охоты.</p>
-
-    <p>
-        Благодаря увеличенному радиусу действия распятия, предотвратить охоту будет проще, особенно в помещениях маленького и среднего размера, таких как гаражи или коридоры домов.
-        Однако, в больших помещениях, таких как баскетбольная площадка на карте «Brownstone High School», все ещё могут возникнуть трудности.
-    </p>
-
-    `;
-    }
+        function showTir1() {
+            document.getElementById("ghost-info").innerHTML = `
+            <h2>тир1</h2>
 
 
-    function showTir2() {
-    document.getElementById("ghost-info").innerHTML = `
-    <h2>Поведение: Демон   </h2>
-    <p>
-        У Демона есть способность, которая позволяет ему автоматически начинать охоту, независимо от текущего среднего уровня рассудка. Нет особого поведения или условия (например, требование прямой видимости с игроком), которое влияет на это; если он решит использовать свою способность, он будет охотиться.
+            `;
+        }
 
-        Распятия могут предотвратить эту охоту, как и любую другую не проклятую охоту.
-    </p>
 
-    <p>Демон может начать охоту, когда средний уровень рассудка составляет 70% вместо обычного порога в 50% для большинства других призраков. Кроме того, у Демона есть отдельная способность, которая позволяет ему начинать охоту выше 70% среднего уровня рассудка команды.</p>
+        function showTir2() {
+            document.getElementById("ghost-info").innerHTML = `
+            <h2>тир2   </h2>
 
-    <p>После охоты призраку типа "Демон" потребуется 20 секунд, чтобы начать следующую атаку, вместо обычных 25 секунд, как у других призраков.</p>
 
-    <p>Использование благовония предотвращает охоту призрака типа "Демон" на 60 секунд, вместо стандартных 90 секунд.</p>
+            `;
+        }
+        function showTir3() {
+            document.getElementById("ghost-info").innerHTML = `
+            <h2>тир 3  </h2>
 
-    <p>Радиус действия распятия против Демона на 50% больше, чем против других призраков.</p>
 
-    `;
-    }
-    function showTir3 () {
-    document.getElementById("ghost-info").innerHTML = `
-    <h2>Поведение2: Демон   </h2>
-    
+            `;
+        }
 
-    `;
-    }
+        function startCarousel(element) {
+            let images = element.querySelectorAll('.slide');
+            let currentIndex = 0;
+
+            // Функция для показа следующего изображения
+            function showNextImage() {
+                images[currentIndex].style.display = 'none';
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].style.display = 'block';
+            }
+
+            // Скрываем все изображения, кроме первого
+            for (let i = 1; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+
+            // Начинаем автоматическую карусель
+            setInterval(showNextImage, 3000); // Измените 3000 на желаемый интервал между изображениями (в миллисекундах)
+        }
+
+        // Находим все ссылки с классом 'eq-link' и запускаем карусель для каждой из них
+        document.querySelectorAll('.eq-link').forEach(startCarousel);
     </script>
 </body>
 </html>
