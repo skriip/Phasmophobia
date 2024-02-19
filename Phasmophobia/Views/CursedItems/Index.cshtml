@@ -65,17 +65,18 @@
             width: 100%;
             height: 100%; /* Задайте максимальную высоту по вашему усмотрению */
         }
+
     </style>
 </head>
 <body>
 
     <div class="location-list-container">
-        <h3>Выберите локацию</h3>
+        <h3>Проклятые Предметы</h3>
 
         <ul class="location-list" id="locationList">
-            <li class="location-list-item" onclick="showLocationInfo(this, 'Bleasdale Farmhouse')">
-                <img src="/imag/Bleasdale Farmhouse.jpg" alt="Bleasdale Farmhouse">
-                <span class="location-name">Bleasdale Farmhouse</span>
+            <li class="location-list-item" onclick="showLocationInfo(this, 'monkey paw')">
+                <img src="/imag/monkey_paw.jpg" alt="monkey paw">
+                <span class="location-name">Обезьянья лапка</span>
 
             </li>
 
@@ -107,8 +108,8 @@
     <script>
         // Объект с информацией о локациях
         var locationsInfo = {
-            'Bleasdale Farmhouse': {
-                image: '/imag/Bleasdale Farmhouse-map1.jpg',
+            'monkey paw': {
+                image: '/imag/monki.jpg',
                 description: 'деревянный дом'
             },
             'Camp Woodwind': {
