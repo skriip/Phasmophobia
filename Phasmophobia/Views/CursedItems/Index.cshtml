@@ -1,13 +1,158 @@
-﻿@page
-@model Phasmophobia.Views.CursedItems.IndexModel
-@{
-}
-<div class="text-center" >
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проклятые предметы</title>
     <style>
         body {
-            background-color: #000000;
-            color: #8d9ea5; /* Цвет текста, чтобы текст был видимым на черном фоне */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: 'Bloody', cursive;
+        }
+
+        .location-list-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .location-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            /*background-color: #f0f0f0;*/
+            justify-content: center; /* Центрирование элементов по горизонтали */
+        }
+
+        .location-list-item {
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 5px solid transparent;
+        }
+
+        .selected {
+            background-color: #3498db;
+            color: white;
+            border: 5px solid #3498db;
+        }
+
+        #location-info {
+            margin-top: 20px;
+            text-align: center;
+            display: none; /* Скрыть блок изначально */
+        }
+
+        img {
+            width: 300px; /* Укажите размер изображения по вашему усмотрению */
+            height: 200px;
+            margin-bottom: 5px;
+            cursor: pointer; /* Добавлен курсор pointer для указания, что изображение кликабельно */
+        }
+
+        .location-name {
+            font-size: 12px; /* Размер шрифта названия локации */
+        }
+
+        .location-info-container img {
+            width: 100%;
+            height: 100%; /* Задайте максимальную высоту по вашему усмотрению */
         }
     </style>
-    Проклятые
-</div>
+</head>
+<body>
+
+    <div class="location-list-container">
+        <h3>Выберите локацию</h3>
+
+        <ul class="location-list" id="locationList">
+            <li class="location-list-item" onclick="showLocationInfo(this, 'Bleasdale Farmhouse')">
+                <img src="/imag/Bleasdale Farmhouse.jpg" alt="Bleasdale Farmhouse">
+                <span class="location-name">Bleasdale Farmhouse</span>
+
+            </li>
+
+            <li class="location-list-item" onclick="showLocationInfo(this, 'Camp Woodwind')">
+                <img src="/imag/Camp Woodwind.jpg" alt="Camp Woodwind">
+                <span class="location-name">Camp Woodwind</span>
+            </li>
+            <li class="location-list-item" onclick="showLocationInfo(this, '6 Tanglewood Drive')">
+                <img src="/imag/6 Tanglewood Drive.jpg" alt="Camp Woodwind">
+                <span class="location-name">6 Tanglewood Drive</span>
+            </li>
+            <li class="location-list-item" onclick="showLocationInfo(this, '13 Willow Street')">
+                <img src="/imag/13 Willow Street.jpg" alt="13 Willow Street">
+                <span class="location-name">13 Willow Street</span>
+            </li>
+            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
+                <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
+                <span class="location-name">10 Ridgeview Cour</span>
+            </li>
+        </ul>
+    </div>
+
+    <div id="location-info" class="location-info-container">
+        <h2 id="location-title"></h2>
+        <img id="location-image" src="" alt="Локация">
+        <p id="location-description"></p>
+    </div>
+
+    <script>
+        // Объект с информацией о локациях
+        var locationsInfo = {
+            'Bleasdale Farmhouse': {
+                image: '/imag/Bleasdale Farmhouse-map1.jpg',
+                description: 'деревянный дом'
+            },
+            'Camp Woodwind': {
+                image: '/imag/Phasmophobia-Camp-Woodwind-easter-egg-map.jpg',
+                description: 'Небольшой лагерь.'
+            },
+            '6 Tanglewood Drive': {
+                image: '/imag/Tanglewood-Street-House.jpg',
+                description: 'не плох для начального уровня.'
+            },
+            '13 Willow Street': {
+                image: '/imag/Phasmophobia-Willow-Street-easter-egg-map.jpg',
+                description: 'учиться лучше с него.'
+            },
+            '10 Ridgeview Court': {
+                image: '/imag/Ridgeview_map.jpg',
+                description: '3 этажа счастья.'
+            }
+        };
+
+
+        function showLocationInfo(element, location) {
+            // Очистить выделение для всех элементов списка
+            var items = document.querySelectorAll('.location-list-item');
+            items.forEach(function (item) {
+                item.classList.remove('selected');
+            });
+
+            // Выделить выбранный элемент
+            element.classList.add('selected');
+
+            // Получить элементы
+            var locationTitle = document.getElementById('location-title');
+            var locationImage = document.getElementById('location-image');
+            var locationDescription = document.getElementById('location-description');
+
+            // Установить заголовок, изображение и описание
+
+            locationTitle.textContent = location;
+            locationImage.src = locationsInfo[location].image;
+            locationDescription.textContent = locationsInfo[location].description;
+            var locationInfo = document.getElementById('location-info');
+            locationInfo.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
