@@ -259,23 +259,23 @@
             let images = element.querySelectorAll('.slide');
             let currentIndex = 0;
 
-            // Функция для показа следующего изображения
+           
             function showNextImage() {
                 images[currentIndex].style.display = 'none';
                 currentIndex = (currentIndex + 1) % images.length;
                 images[currentIndex].style.display = 'block';
             }
 
-            // Скрываем все изображения, кроме первого
+            
             for (let i = 1; i < images.length; i++) {
                 images[i].style.display = 'none';
             }
 
-            // Начинаем автоматическую карусель
-            setInterval(showNextImage, 3000); // Измените 3000 на желаемый интервал между изображениями (в миллисекундах)
+            
+            setInterval(showNextImage, 3000); 
         }
 
-        // Находим все ссылки с классом 'eq-link' и запускаем карусель для каждой из них
+        
         document.querySelectorAll('.eq-link').forEach(startCarousel);
     </script>
 </body>
