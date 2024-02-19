@@ -41,9 +41,9 @@
            
         }
 
-        .crucifix-slide {
-            transform: scale(1.25); /* Увеличение при выборе */
-                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Тень при выборе */
+        .select-slide {
+            transform: scale(1.1); /* Увеличение при выборе */
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Тень при выборе */
         }
 
         #slider-container {
@@ -97,21 +97,131 @@
                         <img class="slide tir3" src="~/imag/Equipment/tir3/laser3.png" alt="Лазер">
                     </a>
                 </li>
-                 <li>
-                   <a asp-controller="Equipment" asp-action="Emf5" class="eq-link">
-                        <img class="slide tir1" src="~/imag/Equipment/tir1/emf.png" alt="ЭМП">
-                        <img class="slide tir2" src="~/imag/Equipment/tir2/emf2.png" alt="ЭМП">
-                        <img class="slide tir3" src="~/imag/Equipment/tir3/emf3.png" alt="ЭМП">
+                <li>
+                    <a asp-controller="Equipment" asp-action="UvLigth" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/uvl.png" alt="УФ">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/ulv2.png" alt="УФ">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/uvl3.png" alt="УФ">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="GhostBook" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/book.png" alt="Блокнот">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/book2.png" alt="Блокнот">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/book3.png" alt="Блокнот">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Termometr" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/termo.png" alt="Термо">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/termo2.png" alt="Термо">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/termo3.png" alt="Термо">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="SpiritBox" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/spir.png" alt="Радио">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/spiritbox2.png" alt="Радио">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/spir3.png" alt="Радио">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Flashlight" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/light.png" alt="Фонарик">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/light2.png" alt="Фонарик">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/lignt3.png" alt="Фонарик">
+                    </a>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Incense" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/blagovi.png" alt="Благование">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/blag2.png" alt="Благование">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/blag3.png" alt="Благование">
                     </a>
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="Crucifix" class="eq-link">
-                        <img class="slide tir1 crucifix-slide" src="~/imag/Equipment/tir1/raspit.png" alt="Распятие">
-                        <img class="slide tir2 crucifix-slide" src="~/imag/Equipment/tir2/cir2.png" alt="Распятие">
-                        <img class="slide tir3 crucifix-slide" src="~/imag/Equipment/tir3/cir3.png" alt="Распятие">
+                        <img class="slide tir1 select-slide" src="~/imag/Equipment/tir1/raspit.png" alt="Распятие">
+                        <img class="slide tir2 select-slide" src="~/imag/Equipment/tir2/cir2.png" alt="Распятие">
+                        <img class="slide tir3 select-slide" src="~/imag/Equipment/tir3/cir3.png" alt="Распятие">
                     </a>
                 </li>
-                <!-- Остальные элементы списка -->
+                <li>
+                    <a asp-controller="Equipment" asp-action="Salt" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/Salt.png" alt="Соль">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/salt2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/salt3.png" alt="Соль">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="VideoCamera" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/cameravideo.png" alt="Видеокамера">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/camera2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/video3.png" alt="Видеокамера">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="PhotoCamera" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/photocamera.png" alt="Фотоаппарат">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/photo2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/phot3.png" alt="Фотоаппарат">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="MotionSensor" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/datchDvi.png" alt="Датчик движения">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/dtdviz2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/dtdviz3.png" alt="Датчик движения">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action=" SoundSensor" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/datchZvuk.png" alt="Датчик звука">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/dtsoun2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/dtsound3.png" alt="Датчик звука">
+
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Sedative" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/Lecar.png" alt="Успокоительное">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/usp2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/usp3.png" alt="Успокоительное">
+                    </a>
+                <li>
+                    <a asp-controller="Equipment" asp-action="HeadMount " class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/krepHead.png" alt="Крепление на голову">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/head2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/head3.png" alt="Крепление на голову">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="DirectionalMicrophone" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/microNaprav.png" alt="Направленный микрофон">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/naprmicro2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/micko3.png" alt="Направленный микрофон">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Lamp" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/Svecha.png" alt="Свеча">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/svecha2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/svecha3.png" alt="Свеча">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Lighter" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/Ognivo.png" alt="Зажигалка">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/ognivo2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/ognivo3.png" alt="Зажигалка">
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Tripod" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/Shtat.png" alt="Штатив">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/trip2.png" alt="Соль">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/trip3.png" alt="Штатив">
+                    </a>
+                </li>
             </ul>
         </div>
         <div style="flex: 1; padding-left: 20px;">
