@@ -79,5 +79,22 @@ namespace Phasmophobia.Controllers
                 return View();
             }
         }
+        public ActionResult Van()
+        {
+            return View();
+        }
+        public ActionResult Prestige()
+        {
+            return View();
+        }
+        public ActionResult Challenge()
+        {
+            return View();
+        }
+        public ActionResult Difficulties()
+        {
+            return View();
+        }
+
     }
 }
