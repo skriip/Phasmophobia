@@ -6,14 +6,10 @@
     <title>Фазмафобия: Улики и Призраки</title>
     <style>
         body {
-            color: wheat;
+            background-color: black;
+            color: white;
             font-family: 'Bloody', cursive;
             margin: 0;
-            overflow: hidden;
-            background-image: url("/imag/fon13.jpg");
-            background-repeat: repeat;
-            background-size: cover;
-            position: relative;
         }
 
         h1, h2 {
@@ -85,10 +81,33 @@
         .evidence-list {
             column-count: 2;
         }
+
+        #buttons-container {
+            margin-left: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+            #buttons-container button {
+                color: white;
+                background: none;
+                border: none;
+                padding: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+
+                #buttons-container button:hover {
+                    color: rgba(255, 255, 255, 0.7);
+                }
     </style>
 </head>
 <body>
+
     <h1>Фазмафобия: Улики и Призраки</h1>
+
     <div style="display: flex;">
         <div style="flex: 1;">
             <h2>Улики/Доказательства</h2>
@@ -130,151 +149,133 @@
                         <span class="ghost-name">Мираж</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="Fingerprints SpiritBox DotsProjector">
+                <li id="ghost3" class="ghost" data-evidence="Fingerprints SpiritBox DotsProjector">
                     <a asp-controller="Ghost" asp-action="Phantom" class="ghost-link">
                         <span class="ghost-name">Фантом</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints SpiritBox">
+                <li id="ghost4" class="ghost" data-evidence="GhostWriting Fingerprints SpiritBox">
                     <a asp-controller="Ghost" asp-action="Poltergeist" class="ghost-link">
                         <span class="ghost-name">Полтергейст</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="Fingerprints GhostOrb DotsProjector">
+                <li id="ghost5" class="ghost" data-evidence="Fingerprints GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Banshee" class="ghost-link">
                         <span style="color:red" class="ghost-name">Банши</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF Fingerprints FreezingTemperatures">
+                <li id="ghost6" class="ghost" data-evidence="EMF Fingerprints FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Jinn" class="ghost-link">
                         <span class="ghost-name">Джинн</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="GhostWriting SpiritBox GhostOrb">
+                <li id="ghost7" class="ghost" data-evidence="GhostWriting SpiritBox GhostOrb">
                     <a asp-controller="Ghost" asp-action="Mare" class="ghost-link">
                         <span class="ghost-name">Мара</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting FreezingTemperatures GhostOrb">
+                <li id="ghost8" class="ghost" data-evidence="GhostWriting FreezingTemperatures GhostOrb">
                     <a asp-controller="Ghost" asp-action="Revenant" class="ghost-link">
                         <span class="ghost-name">Ревенант</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="EMF GhostWriting FreezingTemperatures">
+                <li id="ghost9" class="ghost" data-evidence="EMF GhostWriting FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Shade" class="ghost-link">
                         <span class="ghost-name">Тень</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting Fingerprints FreezingTemperatures">
+                <li id="ghost10" class="ghost" data-evidence="GhostWriting Fingerprints FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Demon" class="ghost-link">
-                        <span class="ghost-name">Демон</span>
+                        <span  class="ghost-name">Демон</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="FreezingTemperatures GhostOrb DotsProjector">
+                <li id="ghost11" class="ghost" data-evidence="FreezingTemperatures GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Yurei" class="ghost-link">
                         <span class="ghost-name">Юрэй</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF FreezingTemperatures DotsProjector">
+                <li id="ghost12" class="ghost" data-evidence="EMF FreezingTemperatures DotsProjector">
                     <a asp-controller="Ghost" asp-action="Oni" class="ghost-link">
                         <span class="ghost-name">Они</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="SpiritBox GhostOrb DotsProjector">
+                <li id="ghost13" class="ghost" data-evidence="SpiritBox GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Yokai" class="ghost-link">
                         <span class="ghost-name">Ёкай</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="Fingerprints FreezingTemperatures GhostOrb">
+                <li id="ghost14" class="ghost" data-evidence="Fingerprints FreezingTemperatures GhostOrb">
                     <a asp-controller="Ghost" asp-action="Hantu" class="ghost-link">
                         <span class="ghost-name">Ханту</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="EMF Fingerprints DotsProjector">
+                <li id="ghost15" class="ghost" data-evidence="EMF Fingerprints DotsProjector">
                     <a asp-controller="Ghost" asp-action="Goryo" class="ghost-link">
                         <span class="ghost-name">Горё</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF GhostWriting Fingerprints">
+                <li id="ghost16" class="ghost" data-evidence="EMF GhostWriting Fingerprints">
                     <a asp-controller="Ghost" asp-action="Myling" class="ghost-link">
                         <span class="ghost-name">Мюлинг</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="SpiritBox FreezingTemperatures GhostOrb">
+                <li id="ghost17" class="ghost" data-evidence="SpiritBox FreezingTemperatures GhostOrb">
                     <a asp-controller="Ghost" asp-action="Onryo" class="ghost-link">
                         <span class="ghost-name">Онрё</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF SpiritBox FreezingTemperatures">
+                <li id="ghost18" class="ghost" data-evidence="EMF SpiritBox FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Twins" class="ghost-link">
                         <span class="ghost-name">Близнецы</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="EMF GhostOrb DotsProjector">
+                <li id="ghost19" class="ghost" data-evidence="EMF GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Raiju" class="ghost-link">
                         <span class="ghost-name">Райдзю</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="EMF Fingerprints GhostOrb">
+                <li id="ghost20" class="ghost" data-evidence="EMF Fingerprints GhostOrb">
                     <a asp-controller="Ghost" asp-action="Obake" class="ghost-link">
                         <span class="ghost-name">Обакэ</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="Fingerprints SpiritBox FreezingTemperatures">
+                <li id="ghost21" class="ghost" data-evidence="Fingerprints SpiritBox FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Mimic" class="ghost-link">
                         <span class="ghost-name">Мимик</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting SpiritBox FreezingTemperatures">
+                <li id="ghost22" class="ghost" data-evidence="GhostWriting SpiritBox FreezingTemperatures">
                     <a asp-controller="Ghost" asp-action="Moroi" class="ghost-link">
                         <span class="ghost-name">Морой</span>
                     </a>
                 </li>
-                <li id="ghost1" class="ghost" data-evidence="GhostWriting SpiritBox DotsProjector">
+                <li id="ghost23" class="ghost" data-evidence="GhostWriting SpiritBox DotsProjector">
                     <a asp-controller="Ghost" asp-action="Deogen" class="ghost-link">
                         <span class="ghost-name">Деоген</span>
                     </a>
                 </li>
-                <li id="ghost2" class="ghost" data-evidence="GhostWriting GhostOrb DotsProjector">
+                <li id="ghost24" class="ghost" data-evidence="GhostWriting GhostOrb DotsProjector">
                     <a asp-controller="Ghost" asp-action="Thaye" class="ghost-link">
                         <span class="ghost-name">Тайэ</span>
                     </a>
                 </li>
-                <!-- Добавьте остальных призраков -->
+
             </ul>
-            <div style="flex: 1; padding-left: 20px;">
-                <h2>Информация о призраке</h2>
-                <p id="ghost-info">Выберите призрака из списка, чтобы увидеть информацию.</p>
-                <p id="ghost-features">Особенности и слабости:</p>
-                <ul>
-                    <li>
-                        Улики:
-                        <ul>
-                            <li>ЭМП (ур. 5)</li>
-                            <li>ЭМП (ур. 5)</li>
-                            <li>Радиоприёмник</li>
-                            <li>Записи в блокноте</li>
-                        </ul>
-                    </li>
-                    <li>Порог рассудка: 50%</li>
-                    <li>Скорость призрака: 1,7 м/с🔊</li>
-                    <li>
-                        Множитель скорости:
-                        <ul>
-                            <li>50%</li>
-                            <li>75%</li>
-                            <li>100%</li>
-                            <li>125%</li>
-                            <li>150%</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Дополнительная информация: При использовании благовония возл
-                    </li>
-                </ul>
+        </div>
+
+        <div style="flex: 1; padding-left: 20px;">
+            <div id="buttons-container">
+
+                <button onclick="showInformation()">Информация</button>
+                <button onclick="showStrategy()">Стратегия</button>
+                <button onclick="showBehavior()">Поведение</button>
             </div>
+            <div id="ghost-info"></div>
+        </div>
+
     </div>
     <script>
+
         function toggleEvidence(evidenceId) {
             var evidenceElement = document.getElementById(evidenceId);
 
@@ -323,6 +324,61 @@
                 }
             });
         }
+        showInformation();
+        function showInformation() {
+            ghostInfo = document.getElementById('ghost-info').innerHTML = `
+                <h3>Особенности и слабости, перечисленные в журнале:</h3>
+                                   <p> <strong>Особенность:</strong> Банши будет ослаблять свою жертву перед атакой на неё.</p>
+                          <p>  <strong>Слабость:</strong> Направленный микрофон может засечь крик Банши.</p>
+                
+                <strong>Порог рассудка:50%</strong>
+                <h3>Улики:</h3>
+                <ul>
+                    <li>Ультрафиолет</li>
+                    <li>Призрачный огонёк</li>
+                    <li>Лазерный проектор</li>
+                </ul>
+                
+                <h3>Дополнительная информация:</h3>
+                <ul>
+                    <li>Имеет шанс издать уникальный паранормальный звук в направленный микрофон, похожий на крик.</li>
+                            <audio controls="controls">
+                            <source src="/audio/banshee_sound.mp3" type="audio/mpeg" /></audio>
+                    <li>Будет охотиться основываясь на рассудке цели, а не на средний уровень рассудка команды.</li>
+                    <li>Если основная цель находится вне дома при начале охоты, Банши будет выбирать жертву, как и любой другой призрак.</li>
+                    <li>Высокий шанс на появление паранормального явления «Пение».</li>
+                    <li>Всегда будет выбирать одного игрока и игнорировать всех остальных во время охоты.</li>
+                </ul>
+            `;
+        }
+
+
+        function showStrategy() {
+            document.getElementById("ghost-info").innerHTML = `
+        <h3>Определение основной цели Банши</h3>
+        <p>Определение основной цели Банши даёт игрокам значительное преимущество. Например, упрощает задания, связанные с охотой, позволяя другим игрокам продолжать расследование во время охоты в полной безопасности. Важно отметить, что цель должна находиться в зоне расследования.</p>
+        <p><strong>Методы определения цели Банши:</strong></p>
+        <ul>
+            <li>Банши будет проверять индивидуальный уровень рассудка только у основной цели при попытке начала охоты. Если призрак начинает охоту при среднем уровне рассудка выше 50%, а у одного или нескольких игроков уровень рассудка ниже 50%, то один из них является целью. Аналогично, если призрак воздерживается от охоты при среднем уровне рассудка ниже 50%, но у одного игрока высокий уровень рассудка, можно предположить, что он является целью Банши.</li>
+            <li>Если игроки будут действовать как "приманки" с благовониями и/или с путями к отступлению, можно точно определить цель. Важно, чтобы все игроки находились в доме. Игроки-приманки должны стоять на виду и пытаться активно привлекать призрака, например, говорить в микрофон или держать в руках включенные электроприборы. Если призрак игнорирует их, попросите другого игрока повторить процесс, а затем продолжайте исключать, пока цель не будет найдена. В качестве альтернативы, несколько игроков могут делать это одновременно, стоя отдельно друг от друга и наблюдая, кого из них начинает преследовать Банши. Этот способ более рискованный, но он полезен, когда метод, основанный на рассудке, оказывается неубедительным, и при игре на сложностях Кошмар и Безумие, где монитор с рассудком недоступен.</li>
+            <li>Банши может блуждать к своей цели вне охоты. Игрок, сообщающий о частой активности или даже охоте, начинающейся рядом с ними и далеко от комнаты призрака, скорее всего, является целью.</li>
+        </ul>
+        <p>Обратите внимание, что если основная цель умирает или отключается, будет выбрана новая цель. Это также относится к сложностям Кошмар и Безумие или к случаям, когда включена настройка "Убийства увеличивают длительность охоты": если Банши удаётся убить свою цель, она немедленно выбирает другого игрока и продолжает охоту.</p>
+        <p>В одиночном режиме определить Банши по её целевой способности невозможно, поэтому нужно полагаться на другие потенциальные признаки или доказательства. Вам пригодится направленный микрофон, однако Банши может не сразу издать свой крик, поэтому его нельзя исключать просто потому, что призрак издаёт только другие паранормальные звуки. Банши имеет более высокий шанс на паранормальное явление типа "пение", поэтому не забывайте обращать на это внимание.</p>
+    `;
+        }
+
+
+        function showBehavior() {
+            document.getElementById("ghost-info").innerHTML = `
+            <h3>Стратегия </h3>
+                <p>В начале игры случайным образом выбирается игрок в качестве основной цели. Если основная цель покидает игру или умирает, будет выбрана новая основная цель.</p>
+                <p>Банши будет проверять рассудок своей цели только при попытке начать охоту (даже если игрок находится вне дома), а не средний уровень рассудка команды. Когда Банши охотится, она будет игнорировать всех игроков, кроме своей цели. Она не будет преследовать и убивать других игроков, даже если вступит в контакт с ними. Банши будет реагировать на благовония, зажжённые другими игроками, но это не позволит выполнить задания "Спугнуть благовонием призрака, пока он преследует жертву" и "Сбежать от призрака, пока он охотится за вами", если только Банши не преследует свою цель.</p>
+                <p>Если Банши начинает охоту, когда её основная цель находится вне дома, она будет выбирать жертву, как и любой другой призрак. У Банши есть механика, похожая на механику Фантома. Она время от времени подходит к своей цели вне охоты.</p>
+                <p>У Банши высокий шанс на появление паранормального явления "Пение". Если основная жертва Банши заставит призрака исчезнуть во время пения, столкнувшись с ним, рассудок снизится на 15% вместо стандартных 10%.</p>
+            `;
+        }
+
     </script>
 </body>
 </html>
