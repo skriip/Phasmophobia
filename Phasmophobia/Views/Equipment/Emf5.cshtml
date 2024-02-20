@@ -35,15 +35,27 @@
             width: 50%;
             height: auto;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* Make the container for images relative */
         }
-
-            .slide.selected {
-            }
 
         .select-slide {
             transform: scale(1.25); /* Увеличение при выборе */
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Тень при выборе */
         }
+
+        .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    text-align: center;
+}
+
+
 
         #slider-container {
             text-align: center;
@@ -92,8 +104,11 @@
                 <li>
                     <a asp-controller="Equipment" asp-action="LaserDots" class="eq-link">
                         <img class="slide tir1" src="~/imag/Equipment/tir1/laser.png" alt="Лазер">
+                        <div class="caption slide tir1">Лазерный проектор</div>
                         <img class="slide tir2" src="~/imag/Equipment/tir2/laser2.png" alt="Лазер">
+                        <div class="caption slide tir2">Лазерный проектор</div>
                         <img class="slide tir3" src="~/imag/Equipment/tir3/laser3.png" alt="Лазер">
+                        <div class="caption slide tir3">Лазерный проектор</div>
                     </a>
                 </li>
                 <li>
@@ -105,9 +120,10 @@
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="Crucifix" class="eq-link">
-                        <img class="slide tir1 " src="~/imag/Equipment/tir1/raspit.png" alt="Распятие">
-                        <img class="slide tir2 " src="~/imag/Equipment/tir2/cir2.png" alt="Распятие">
-                        <img class="slide tir3 " src="~/imag/Equipment/tir3/cir3.png" alt="Распятие">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/raspit.png" alt="Распятие">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/cir2.png" alt="Распятие">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/cir3.png" alt="Распятие">
+                        
                     </a>
                 </li>
                 <!-- Остальные элементы списка -->
@@ -129,34 +145,34 @@
     <script>
         function showInformation() {
             ghostInfo = document.getElementById('ghost-info').innerHTML = `
-                            <h3>Информация о </h3>
+                                    <h3>Информация о </h3>
 
-                                    позже  эмп
-                            `;
+                                            позже  эмп
+                                    `;
         }
 
         function showTir1() {
             document.getElementById("ghost-info").innerHTML = `
-                            <h2>тир1</h2>
-                            эмп
+                                    <h2>тир1</h2>
+                                    эмп
 
-                            `;
+                                    `;
         }
 
 
         function showTir2() {
             document.getElementById("ghost-info").innerHTML = `
-                            <h2>тир2   </h2>
-                                   эмп2
+                                    <h2>тир2   </h2>
+                                           эмп2
 
-                            `;
+                                    `;
         }
         function showTir3() {
             document.getElementById("ghost-info").innerHTML = `
-                            <h2>тир 3  </h2>
-                                     эмп3
+                                    <h2>тир 3  </h2>
+                                             эмп3
 
-                            `;
+                                    `;
         }
 
         function showTir(tir) {
