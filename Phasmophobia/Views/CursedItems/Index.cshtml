@@ -59,9 +59,21 @@
             font-size: 12px;
         }
 
+        .location-info h2 {
+            text-align: center; /* Добавленный стиль для центрирования заголовков h2 */
+        }
+
         .location-info-container img {
             width: 100%;
             height: 100%;
+        }
+
+        .location-info img {
+            width: 80vw; /* 80% ширины viewport */
+            max-width: 300px; /* Максимальная ширина 300px */
+            height: auto; /* Автоматическое вычисление высоты для поддержки соотношения сторон */
+            margin: 20px auto; /* Добавленный стиль для центрирования изображений */
+            display: block; /* Установка блочного типа для изображений */
         }
 
         .location-info {
@@ -75,27 +87,27 @@
         <h3>Проклятые Предметы</h3>
 
         <ul class="location-list" id="locationList">
-            <li class="location-list-item" onclick="showLocationInfo('monkey-paw')">
+            <li class="location-list-item" data-location="monkey-paw" onclick="showLocationInfo('monkey-paw')">
                 <img src="/imag/monkey_paw.jpg" alt="monkey paw">
                 <span class="location-name">Обезьянья лапка</span>
             </li>
 
-            <li class="location-list-item" onclick="showLocationInfo('camp-woodwind')">
+            <li class="location-list-item" data-location="camp-woodwind" onclick="showLocationInfo('camp-woodwind')">
                 <img src="/imag/Camp Woodwind.jpg" alt="Camp Woodwind">
                 <span class="location-name">Camp Woodwind</span>
             </li>
 
-            <li class="location-list-item" onclick="showLocationInfo('6-tanglewood-drive')">
+            <li class="location-list-item" data-location="6-tanglewood-drive" onclick="showLocationInfo('6-tanglewood-drive')">
                 <img src="/imag/6 Tanglewood Drive.jpg" alt="6 Tanglewood Drive">
                 <span class="location-name">6 Tanglewood Drive</span>
             </li>
 
-            <li class="location-list-item" onclick="showLocationInfo('13-willow-street')">
+            <li class="location-list-item" data-location="13-willow-street" onclick="showLocationInfo('13-willow-street')">
                 <img src="/imag/13 Willow Street.jpg" alt="13 Willow Street">
                 <span class="location-name">13 Willow Street</span>
             </li>
 
-            <li class="location-list-item" onclick="showLocationInfo('10-ridgeview-court')">
+            <li class="location-list-item" data-location="10-ridgeview-court" onclick="showLocationInfo('10-ridgeview-court')">
                 <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Court">
                 <span class="location-name">10 Ridgeview Court</span>
             </li>
@@ -105,7 +117,7 @@
     <div id="monkey-paw-info" class="location-info">
         <h2>Обезьянья лапка</h2>
         <div style="text-align: center;">
-            <img src="/imag/monkey_paw.jpg" alt="monkey paw" style="display: inline-block; vertical-align: middle;">
+            <img src="/imag/monki2.jpg" alt="monkey paw" style="display: inline-block; vertical-align: middle;">
         </div>
         <p>Описание локации "Обезьянья лапка". Здесь может быть текст, таблицы и т.д.</p>
 
@@ -145,7 +157,7 @@
 
         <!-- Добавьте аналогичные блоки для других локаций -->
 
-    </div>
+
 
     <script>
         function showLocationInfo(locationName) {
@@ -155,9 +167,19 @@
                 info.style.display = 'none';
             });
 
+            // Удалить класс .selected у всех элементов списка
+            var locationListItems = document.querySelectorAll('.location-list-item');
+            locationListItems.forEach(function (item) {
+                item.classList.remove('selected');
+            });
+
             // Отобразить блок информации для выбранной локации
             var selectedInfo = document.getElementById(locationName + '-info');
             selectedInfo.style.display = 'block';
+
+            // Добавить класс .selected к выбранному элементу списка
+            var selectedListItem = document.querySelector('.location-list-item[data-location="' + locationName + '"]');
+            selectedListItem.classList.add('selected');
         }
     </script>
 
