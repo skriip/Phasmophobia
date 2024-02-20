@@ -129,7 +129,7 @@
         <p>Игроки могут использовать голосовой чат или текстовый интерфейс, чтобы загадывать желания. При использовании голосового чата Обезьянья лапа исполнит любое распознанное желание игрока. При использовании текстового распознавания, пользовательский интерфейс появится при активации («ПКМ» по умолчанию). Можно выбрать одну из 3-ёх категорий, затем выбрать желание для конкретной категории или выйти из пользовательского интерфейса, деактивировав его («ПКМ» по умолчанию).</p>
         <h2>Возможные желания и эфекты от них:</h2>
 
-        <table style="border-collapse: collapse; width: 90%; margin: 20px auto;">
+        <table style="border-collapse: collapse; width: 95%; margin: 20px auto;">
             <thead>
                 <tr>
                     <th style="border: 1px solid white; padding: 8px;">Желания</th>
@@ -303,7 +303,7 @@
         <p>Можно сфотографировать доску, и фото принесет в награду 5$. Также можно сфотографировать процесс ответа призрака, и фото под названием «Взаимодействие» принесет еще 5$.</p>
         <h2>Возможные вопросы и эфекты от них:</h2>
 
-        <table style="border-collapse: collapse; width: 90%; margin: 20px auto;">
+        <table style="border-collapse: collapse; width: 95%; margin: 20px auto;">
             <thead>
                 <tr>
                     <th style="border: 1px solid white; padding: 8px;">Категория</th>
@@ -317,75 +317,92 @@
             <tbody>
                 <?php for ($row = 1; $row <= 10; $row++) : ?>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Местоположение <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Указывает на комнату, в которой находится призрак в данный момент. Ответ на вопрос о любимой комнате не будет дан, если призрак в ней не находится.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Где ты находишься?", "Какая твоя любимая комната?", "Где твоя комната?", "Какая твоя комната?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">См. Оборудование в фургоне "Карта локации"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">50%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Местоположение (неопределенное)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Вместо указания текущей комнаты призрак просто отвечает, находится ли он в той же комнате, где находится задающий вопрос.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Ты здесь?", "Ты рядом?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да/Нет	</td>
+                    <td style="border: 1px solid white; padding: 8px;">20%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Нет</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Местонахождение кости	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Будет дано название комнаты, где находится кость. В настоящее время существует известная проблема, когда этот вопрос может не работать.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Где находится кость?", "Где ты умер?", "Где твое тело?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">См. Оборудование в фургоне "Карта локации"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">50%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Игра в прятки	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Доска Уиджи начнет обратный отсчет от 5 до 0, затем разобьётся и начнётся проклятая охота.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"(Хочешь сыграть в) прятки?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Обратный отсчет от 5 до 0	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Без потери	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Вопросы о комнате	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">На ответ влияет количество людей в комнате. Если призрак находится в той же комнате, где присутствующие будут задавать вопрос по доске Уиджи, то количество увеличится на одного.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Сколько людей в комнате?", "Как много людей в комнате?", "Как много людей здесь?", "Как много призраков в комнате?", "Как много здесь призраков?", "Ты один?", "Мы одни?", "Кто здесь?", "Кто в этой комнате?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Число/Да/Нет	</td>
+                    <td style="border: 1px solid white; padding: 8px;">20%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Нет</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Застенчивость	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Предоставит информацию, отвечает ли призрак в радиоприёмник при других людях или только в одиночестве.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Ты отвечаешь всем?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да/Нет	</td>
+                    <td style="border: 1px solid white; padding: 8px;">20%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Возраст <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Возраст призрака генерируется случайным образом в начале игры, диапазон чисел от 2 до 90 лет.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Сколько тебе лет?", "Какой твой возраст?", "Ты старый?", "Ты молодой?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">2-90	</td>
+                    <td style="border: 1px solid white; padding: 8px;">5%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Смерть <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Продолжительность смерти призрака генерируется случайным образом в начале игры, диапазон чисел от 50 до 1000 лет.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Как долго ты мёртв?", "Сколько лет назад ты умер?", "Как давно ты здесь?", "Как давно ты умер?", "Когда ты умер?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">50 - 1000	</td>
+                    <td style="border: 1px solid white; padding: 8px;">5%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Нет</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Способ смерти	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Предоставляет причину смерти призрака.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Как ты умер?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Несчастный случай, Утонул, Задохнулся, Убийство, Застрелен, Падение, Поскользнулся	</td>
+                    <td style="border: 1px solid white; padding: 8px;">5%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Предназначение <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Предоставляет информацию о цели присутствия призрака.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">"Почему ты здесь?", "Что ты хочешь?"	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Любовь, Страх, Месть, Ты, Ненависть, Убийство, Мир, Заперт, Одиночество, Потерян	</td>
+                    <td style="border: 1px solid white; padding: 8px;">5%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Нет</td>
                 </tr>
                 <?php endfor; ?>
             </tbody>
         </table>
 
         <h2>Награда за фотографию:</h2>
-        <p>Фотография магического круга, независимо от того был он активирован или нет, принесёт игроку 5$ и 5XP (зависимо от расстояния, с которого она была сделана).</p>
+        <p>Фотография доски Уиджи, независимо от того активирована она или нет, принесёт игроку 5$ и 5XP (зависимо от расстояния, с которого она была сделана).</p>
+        <p>Если фотография доски Уиджи будет сделана в течение 20 секунд, после успешно заданного вопроса, игрок сфотографирует "Взаимодействие" и получит 5$ и 5XP (зависимо от расстояния, с которого она была сделано). Количество таких фотографий, в которые также входят вопросы одной и той же категории, не ограничено, что позволяет игрокам заполнить свободные места дополнительными фотографиями "Взаимодействие".</p>
 
     </div>
 
