@@ -127,30 +127,103 @@
             <li>2x – 2,9x: 4 желания</li>
             <li>3x или выше: 3 желания</li>
         </ul>
-        <p></p>
+        <h2>Использование обезьяней лапки:</h2>
+        <p>Игроки могут использовать голосовой чат или текстовый интерфейс, чтобы загадывать желания. При использовании голосового чата Обезьянья лапа исполнит любое распознанное желание игрока. При использовании текстового распознавания, пользовательский интерфейс появится при активации («ПКМ» по умолчанию). Можно выбрать одну из 3-ёх категорий, затем выбрать желание для конкретной категории или выйти из пользовательского интерфейса, деактивировав его («ПКМ» по умолчанию).</p>
+        <h2>Возможные желания и эфекты от них:</h2>
 
-
-        <table style="border-collapse: collapse; width: 80%; margin: 20px auto;">
+        <table style="border-collapse: collapse; width: 90%; margin: 20px auto;">
             <thead>
                 <tr>
-                    <th style="border: 1px solid white; padding: 8px;">Заголовок 1</th>
-                    <th style="border: 1px solid white; padding: 8px;">Заголовок 2</th>
-                    <th style="border: 1px solid white; padding: 8px;">Заголовок 3</th>
-                    <th style="border: 1px solid white; padding: 8px;">Заголовок 4</th>
-                    <th style="border: 1px solid white; padding: 8px;">Заголовок 5</th>
-                    <th style="border: 1px solid white; padding: 8px;">Заголовок 6</th>
+                    <th style="border: 1px solid white; padding: 8px;">Желания</th>
+                    <th style="border: 1px solid white; padding: 8px;">Действие</th>
+                    <th style="border: 1px solid white; padding: 8px;">Положительный эффект</th>
+                    <th style="border: 1px solid white; padding: 8px;">Негативный эффект</th>
+                    <th style="border: 1px solid white; padding: 8px;">Потеря рассудка</th>
+                    <th style="border: 1px solid white; padding: 8px;">Текстовый вариант</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Заполните ячейки таблицы данными -->
                 <?php for ($row = 1; $row <= 10; $row++) : ?>
                 <tr>
-                    <td style="border: 1px solid white; padding: 8px;">Строка <?= $row ?></td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
-                    <td style="border: 1px solid white; padding: 8px;">Данные</td>
+                    <td style="border: 1px solid white; padding: 8px;">Призрак (Ghost) <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу увидеть призрака (I wish to see the ghost)</td>
+                    <td style="border: 1px solid white; padding: 8px;">Запускает паранормальное явление с появлением призрака в его текущем местоположении.</td>
+                    <td style="border: 1px solid white; padding: 8px;">Мгновенно запирает входную дверь. Сразу после этого начинается охота. Обзор игрока уменьшается во время этой охоты с помощью черного тумана</td>
+                    <td style="border: 1px solid white; padding: 8px;">50%</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>                 
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Призрак (Ghost) <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу активность (I wish for activity)</td>
+                    <td style="border: 1px solid white; padding: 8px;">Удваивает всю активность призрака на 2 минуты (броски, двери, блуждание, способности).</td>
+                    <td style="border: 1px solid white; padding: 8px;">Ломает источник электропитания насовсем и запирает входную дверь на 2 минуты</td>
+                    <td style="border: 1px solid white; padding: 8px;">20%</td>
+                    <td style="border: 1px solid white; padding: 8px;">Нет</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Призрак (Ghost) <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу поймать призрака в ловушку (I wish the ghost was trapped)</td>
+                    <td style="border: 1px solid white; padding: 8px;">Телепортирует призрака в его любимую комнату и запирает все её двери на 1 минуту. Призрак не может охотиться, блуждать или использовать способности, пока он заперт в своей комнате.</td>
+                    <td style="border: 1px solid white; padding: 8px;">Запирает все двери комнаты игрока, произнёсшего желание, на 1 минуту. Призрак начнёт охоту через 1 минуту и откроет все двери. 25% шанс, что двери откроются после безопасного периода</td>
+                    <td style="border: 1px solid white; padding: 8px;">50%</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Игрок (Player) <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу вернуть свой рассудок (I wish for sanity)	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Усредняет рассудок каждого игрока до 50%.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Устанавливает любимую комнату призрака на случайную. Увеличивает скорость падения рассудка на 50% от текущего значения	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Без потери	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Игрок (Player)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу быть в безопасности (I wish to be safe)	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Разблокирует ближайшее заблокированное укрытие.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Разбивает свет в текущей комнате. Призрак теперь может слышать и чувствовать снаряжение игрока, загадавшего желание, на любом расстоянии	</td>
+                    <td style="border: 1px solid white; padding: 8px;">20%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Нет</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Игрок (Player)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу уйти отсюда (I wish to leave)	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Отпирает все входные двери в любое время, в том числе во время охоты.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Замедляет ваше передвижение на 5 секунд, затем медленно восстанавливает его в течение 5 секунд и снижает обзор на время действия	</td>
+                    <td style="border: 1px solid white; padding: 8px;">20%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Другое (Other)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу жить (I wish for life) - Работает только в сетевой игре	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Воскрешает мёртвого игрока.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">50% шанс убить игрока, произнёсшего желание.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">5%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Другое (Other)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу приобрести знания (I wish for knowledge)	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Вычёркивает отсутствующую улику и соответствующие типы призраков из вашего журнала.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Рядом с игроком начинается охота. Зрение игрока снижается, звуки становятся приглушёнными на весь оставшийся контракт	</td>
+                    <td style="border: 1px solid white; padding: 8px;">5%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Нет</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Другое (Other)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Хочу тип погоды (I wish for тип погоды)	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Возможность выбрать любую погоду. Например: рассвет (sunrise), снег (snow), дождь (rain) и тд.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">На 1 секунду экран игрока темнеет, рассудок снижается на 25%.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">5%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Другое (Other)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Сам не знаю, чего хочу (I wish for anything)	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Исполняется случайное желание.	</td>
+                    <td style="border: 1px solid white; padding: 8px;"> </td>
+                    <td style="border: 1px solid white; padding: 8px;">5%	</td>
+                    <td style="border: 1px solid white; padding: 8px;">Да</td>
                 </tr>
                 <?php endfor; ?>
             </tbody>
