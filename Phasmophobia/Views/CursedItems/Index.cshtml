@@ -444,6 +444,110 @@
         <p>Фотография куклы вуду, независимо от количества вставленных игл, принесёт игроку 5$ и 5XP (зависимо от расстояния, с которого она была сделана).</p>
 
     </div>
+
+    <div id="Tarot-Cards-info" class="location-info">
+        <h2>Карты таро</h2>
+        <div style="text-align: center;">
+            <img src="/imag/Tarot-Cards1.jpg" alt="Tarot Cards" style="display: inline-block; vertical-align: middle;">
+        </div>
+        <p>Карты Таро (англ. Tarot Cards) - 1 из 7 проклятых предметов, которые способны оказывать случайные эффекты как на игрока, так и на призрака.</p>
+        <h2>Использование:</h2>
+        <p>Каждая колода содержит 10 случайно сгенерированных карт, каждая из которых уникальным образом влияет либо на игрока, либо на призрака, если тот рядом. Игрок может вытянуть любую из них. После использования карта исчезает, окутываясь пламенем (каждый тип по-своему). Карты Таро могут быть использованы только тогда, когда игрок с картами находится в доме.</p>
+        <p>Если использовать карты Таро во время охоты, всегда будет выпадать "The Fool".</p>
+        <p>На один контракт приходится только одна колода карт Таро и как только все карты будут израсходованы - все последующие охоты будут продлены на 20 секунд, даже если до этого не выпадала карта "Death".</p>
+        <p>Карты Таро можно использовать только если игрок находится внутри зоны расследования. Но в настоящее время это можно обойти: стоя у входной двери и при анимации вытягивания карты, выходить наружу. Если игрок вытащит карту "Death" и внутри зоны расследования не будет игроков, то проклятая охота не состоится. Стоит обратить внимание, что карта "The Hanged Man" сработает независимо от местоположения игрока.</p>
+        <h2>Карты</h2>
+        <div style="text-align: center;">
+            <img src="/imag/Tarot-Cards.jpg" alt="Tarot Cards" style="display: inline-block; vertical-align: middle;">
+        </div>
+        <table style="border-collapse: collapse; width: 80%; margin: 20px auto;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid white; padding: 8px;">Название</th>
+                    <th style="border: 1px solid white; padding: 8px;">Описание</th>
+                    <th style="border: 1px solid white; padding: 8px;">Шанс выпадения</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php for ($row = 1; $row <= 10; $row++) : ?>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The Tower (Башня)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает синим цветом и заставляет призрака сделать взаимодействие.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        20%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The Wheel of fortune (Колесо фортуны)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает зелёным (повышение рассудка на 25%) или красным цветом (понижение рассудка на 25%).	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        20%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The Fool (Дурак)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает светло-фиолетовым цветом. Сначала будет обычной картой, но перед тем как сгореть превратится в Дурака. Не имеет никакого эффекта.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        17%, во время охоты 100%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The Devil (Дьявол)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает розовым цветом и заставляет призрака сделать рядом паранормальное явление.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        10%
+                    </td>
+                </tr>
+                  <tr>
+                    <td style="border: 1px solid white; padding: 8px;">Death (Смерть)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает фиолетовым цветом и вызывает проклятую охоту.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        10%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The Hermit (Отшельник)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает бирюзовым цветом, телепортирует призрака в его любимую комнату и запирает там на 1 минуту.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        10%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The High Preistess (Верховная жрица)	<?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает светло-жёлтым цветом и воскрешает случайного мёртвого игрока на месте его трупа. Если мертвых игроков нет, карта воскресит следующего игрока, который умрёт.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        2%
+                    </td>
+                </tr>
+                  <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The Hanged Man (Повешенный человек)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает без цвета и мгновенно убивает игрока, вытащившего данную карту из колоды.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        1%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The Sun (Солнце)	  <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает жёлтым цветом и восстанавливает 100% рассудка.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        5%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">The Moon (Луна)	 <?= $row ?></td>
+                    <td style="border: 1px solid white; padding: 8px;">Карта сгорает белым цветом и снижает рассудок до 0%.	</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        5%
+                    </td>
+                </tr>
+                <?php endfor; ?>
+            </tbody>
+        </table>
+        <h2>Награда за фотографию:</h2>
+        <p>Фотография куклы вуду, независимо от количества вставленных игл, принесёт игроку 5$ и 5XP (зависимо от расстояния, с которого она была сделана).</p>
+
+    </div>
         <!-- Добавьте аналогичные блоки для других локаций -->
 
 
