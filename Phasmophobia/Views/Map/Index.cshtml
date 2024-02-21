@@ -220,6 +220,10 @@
             locationInfo.style.display = 'block';
         }
         function filterLocations(size) {
+            // Добавим скрытие информации о локации при фильтрации
+            var locationInfo = document.getElementById('location-info');
+            locationInfo.style.display = 'none';
+
             var items = document.querySelectorAll('.location-list-item');
 
             items.forEach(function (item) {
