@@ -22,10 +22,9 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center; /* Центрирование элементов по горизонтали */
-            flex-wrap: wrap; /* Добавленный стиль для переноса на новую строку */
+            justify-content: center;
+            flex-wrap: wrap;
         }
-        
 
         .location-list-item {
             margin: 5px;
@@ -46,24 +45,23 @@
         #location-info {
             margin-top: 20px;
             text-align: center;
-            display: none; /* Скрыть блок изначально */
-            
+            display: none;
         }
 
         .location-list-item img {
-            width: 300px; /* Укажите размер изображения по вашему усмотрению */
+            width: 300px;
             height: 200px;
             margin-bottom: 5px;
-            cursor: pointer; /* Добавлен курсор pointer для указания, что изображение кликабельно */
+            cursor: pointer;
         }
 
         .location-name {
-            font-size: 12px; /* Размер шрифта названия локации */
+            font-size: 12px;
         }
 
         .location-info-container img {
             width: 100%;
-            height: 100%; /* Задайте максимальную высоту по вашему усмотрению */
+            height: 100%;
         }
 
         .location-filter {
@@ -71,13 +69,13 @@
             margin-bottom: 20px;
         }
 
-        .location-filter button {
+            .location-filter button {
                 margin: 5px;
                 cursor: pointer;
                 border-radius: 5px;
                 padding: 5px 10px;
                 font-size: 14px;
-        }
+            }
     </style>
 </head>
 <body>
@@ -89,56 +87,55 @@
             <button onclick="filterLocations('small')">Маленькие</button>
             <button onclick="filterLocations('medium')">Средние</button>
             <button onclick="filterLocations('large')">Большие</button>
-            
         </div>
 
         <ul class="location-list" id="locationList">
-            <li class="location-list-item" onclick="showLocationInfo(this, 'Bleasdale Farmhouse')">
+
+            <li class="location-list-item small" onclick="showLocationInfo(this, 'Bleasdale Farmhouse')">
                 <img src="/imag/Bleasdale Farmhouse.jpg" alt="Bleasdale Farmhouse">
                 <span class="location-name">Bleasdale Farmhouse</span>
-               
             </li>
-
-            <li class="location-list-item" onclick="showLocationInfo(this, 'Camp Woodwind')">
+            <li class="location-list-item small" onclick="showLocationInfo(this, 'Camp Woodwind')">
                 <img src="/imag/Camp Woodwind.jpg" alt="Camp Woodwind">
                 <span class="location-name">Camp Woodwind</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '6 Tanglewood Drive')">
+            <li class="location-list-item small" onclick="showLocationInfo(this, '6 Tanglewood Drive')">
                 <img src="/imag/6 Tanglewood Drive.jpg" alt="Camp Woodwind">
                 <span class="location-name">6 Tanglewood Drive</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '13 Willow Street')">
+            <li class="location-list-item small" onclick="showLocationInfo(this, '13 Willow Street')">
                 <img src="/imag/13 Willow Street.jpg" alt="13 Willow Street">
                 <span class="location-name">13 Willow Street</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
+            <li class="location-list-item small" onclick="showLocationInfo(this, '10 Ridgeview Court')">
                 <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
                 <span class="location-name">10 Ridgeview Cour</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
-                <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
-                <span class="location-name">10 Ridgeview Cour</span>
+            <li class="location-list-item small" onclick="showLocationInfo(this, '42 Edgefield Road')">
+                <img src="/imag/42-Edgefield-Road.jpg" alt="42 Edgefield Road">
+                <span class="location-name">42 Edgefield Road</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
-                <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
-                <span class="location-name">10 Ridgeview Cour</span>
+            <li class="location-list-item small" onclick="showLocationInfo(this, 'Grafton Farmhouse')">
+                <img src="/imag/Grafton Farmhouse.jpg" alt="Grafton Farmhouse">
+                <span class="location-name">Grafton Farmhouse</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
-                <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
-                <span class="location-name">10 Ridgeview Cour</span>
+            <li class="location-list-item medium" onclick="showLocationInfo(this, 'Maple Lodge Campsite')">
+                <img src="/imag/Maple Lodge Campsite.jpg" alt="Maple Lodge Campsite">
+                <span class="location-name">Maple Lodge Campsite</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
-                <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
-                <span class="location-name">10 Ridgeview Cour</span>
+            <li class="location-list-item medium" onclick="showLocationInfo(this, 'Prison')">
+                <img src="/imag/Prison.jpg" alt="Prison">
+                <span class="location-name">Prison</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
-                <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
-                <span class="location-name">10 Ridgeview Cour</span>
+            <li class="location-list-item large" onclick="showLocationInfo(this, 'Brownstone High School')">
+                <img src="/imag/Brownstone High School.jpg" alt="Brownstone High School">
+                <span class="location-name">Brownstone High School</span>
             </li>
-            <li class="location-list-item" onclick="showLocationInfo(this, '10 Ridgeview Court')">
-                <img src="/imag/10 Ridgeview Court.jpg" alt="10 Ridgeview Cour">
-                <span class="location-name">10 Ridgeview Cour</span>
+            <li class="location-list-item large" onclick="showLocationInfo(this, 'Sunny Meadows Mental Institution')">
+                <img src="/imag/Sunny Meadows Mental Institution.jpg" alt="Sunny Meadows Mental Institution">
+                <span class="location-name">Sunny Meadows Mental Institution</span>
             </li>
+            
         </ul>
     </div>
 
@@ -167,7 +164,31 @@
                 image: '/imag/Phasmophobia-Willow-Street-easter-egg-map.jpg',
                 description: 'учиться лучше с него.'
             },
+            '42 Edgefield Road': {
+                image: '/imag/Ridgeview_map.jpg',
+                description: '3 этажа счастья.'
+            },
+            'Grafton Farmhouse': {
+                image: '/imag/Ridgeview_map.jpg',
+                description: '3 этажа счастья.'
+            },
+            'Maple Lodge Campsite': {
+                image: '/imag/Ridgeview_map.jpg',
+                description: '3 этажа счастья.'
+            },
+            'Prison': {
+                image: '/imag/Ridgeview_map.jpg',
+                description: '3 этажа счастья.'
+            },
             '10 Ridgeview Court': {
+                image: '/imag/Ridgeview_map.jpg',
+                description: '3 этажа счастья.'
+            },
+            'Brownstone High School': {
+                image: '/imag/Ridgeview_map.jpg',
+                description: '3 этажа счастья.'
+            },
+            'Sunny Meadows Mental Institution': {
                 image: '/imag/Ridgeview_map.jpg',
                 description: '3 этажа счастья.'
             }
@@ -194,6 +215,7 @@
             locationTitle.textContent =  location;
             locationImage.src = locationsInfo[location].image;
             locationDescription.textContent = locationsInfo[location].description;
+            
             var locationInfo = document.getElementById('location-info');
             locationInfo.style.display = 'block';
         }
@@ -202,31 +224,13 @@
 
             items.forEach(function (item) {
                 item.style.display = 'none';
-            });
 
-            if (size === 'all') {
-                items.forEach(function (item) {
+                if (size === 'all' || item.classList.contains(size)) {
                     item.style.display = 'flex';
-                });
-            } else {
-                items.forEach(function (item) {
-                    var locationName = item.querySelector('.location-name').textContent.toLowerCase();
-                    var showItem = false;
-
-                    if (size === 'small' && locationName.includes('маленький')) {
-                        showItem = true;
-                    } else if (size === 'medium' && locationName.includes('средний')) {
-                        showItem = true;
-                    } else if (size === 'large' && locationName.includes('большой')) {
-                        showItem = true;
-                    }
-
-                    if (showItem) {
-                        item.style.display = 'flex';
-                    }
-                });
-            }
+                }
+            });
         }
+
     </script>
 </body>
 </html>
