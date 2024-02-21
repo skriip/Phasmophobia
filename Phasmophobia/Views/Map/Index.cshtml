@@ -65,6 +65,19 @@
             width: 100%;
             height: 100%; /* Задайте максимальную высоту по вашему усмотрению */
         }
+
+        .location-filter {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .location-filter button {
+                margin: 5px;
+                cursor: pointer;
+                border-radius: 5px;
+                padding: 5px 10px;
+                font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -72,10 +85,11 @@
     <div class="location-list-container">
         <h3>Карты Локаций</h3>
         <div class="location-filter">
+            <button onclick="filterLocations('all')">Все</button>
             <button onclick="filterLocations('small')">Маленькие</button>
             <button onclick="filterLocations('medium')">Средние</button>
             <button onclick="filterLocations('large')">Большие</button>
-            <button onclick="filterLocations('all')">Все</button>
+            
         </div>
 
         <ul class="location-list" id="locationList">
@@ -182,6 +196,36 @@
             locationDescription.textContent = locationsInfo[location].description;
             var locationInfo = document.getElementById('location-info');
             locationInfo.style.display = 'block';
+        }
+        function filterLocations(size) {
+            var items = document.querySelectorAll('.location-list-item');
+
+            items.forEach(function (item) {
+                item.style.display = 'none';
+            });
+
+            if (size === 'all') {
+                items.forEach(function (item) {
+                    item.style.display = 'flex';
+                });
+            } else {
+                items.forEach(function (item) {
+                    var locationName = item.querySelector('.location-name').textContent.toLowerCase();
+                    var showItem = false;
+
+                    if (size === 'small' && locationName.includes('маленький')) {
+                        showItem = true;
+                    } else if (size === 'medium' && locationName.includes('средний')) {
+                        showItem = true;
+                    } else if (size === 'large' && locationName.includes('большой')) {
+                        showItem = true;
+                    }
+
+                    if (showItem) {
+                        item.style.display = 'flex';
+                    }
+                });
+            }
         }
     </script>
 </body>
