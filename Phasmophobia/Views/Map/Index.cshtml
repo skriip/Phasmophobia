@@ -220,19 +220,20 @@
             locationInfo.style.display = 'block';
         }
         function filterLocations(size) {
-            // Добавим скрытие информации о локации при фильтрации
-            var locationInfo = document.getElementById('location-info');
-            locationInfo.style.display = 'none';
-
             var items = document.querySelectorAll('.location-list-item');
 
             items.forEach(function (item) {
+                item.classList.remove('selected');
                 item.style.display = 'none';
 
                 if (size === 'all' || item.classList.contains(size)) {
                     item.style.display = 'flex';
                 }
             });
+
+            // Добавим скрытие информации о локации при фильтрации
+            var locationInfo = document.getElementById('location-info');
+            locationInfo.style.display = 'none';
         }
 
     </script>
