@@ -20,7 +20,8 @@
         .ghost-list {
             list-style-type: none;
             column-gap: 10px;
-            padding: 0;
+            padding: 0px;
+            
         }
 
         .ghost-list {
@@ -70,14 +71,18 @@
 
         .evidence-selected.crossed-out .evidence-text {
             text-decoration: line-through;
+            text-decoration-thickness: 2px; 
             color: grey;
         }
 
         .ghost-link {
             text-decoration: none;
             color: white;
+            display: block;
         }
-
+        .ghost{
+            padding:4px 0px;
+        }
         .evidence-list {
             column-count: 2;
         }
@@ -87,6 +92,21 @@
             margin-top: 20px;
             display: flex;
             flex-direction: row;
+        }
+
+        .select-slide {
+            transform: scale(1.05); 
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+            display: inline-block;
+            border-radius:  50%;
+        }
+
+        .ghost-link-sel{
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding:0 3px;
+            margin:0 3px;
         }
 
             #buttons-container button {
@@ -159,9 +179,9 @@
                         <span class="ghost-name">Полтергейст</span>
                     </a>
                 </li>
-                <li id="ghost5" class="ghost" data-evidence="Fingerprints GhostOrb DotsProjector">
-                    <a asp-controller="Ghost" asp-action="Banshee" class="ghost-link">
-                        <span style="color:red" class="ghost-name">Банши</span>
+                <li id="ghost5" class="ghost select-slide" data-evidence="Fingerprints GhostOrb DotsProjector">
+                    <a asp-controller="Ghost" asp-action="Banshee" class="ghost-link-sel">
+                        <span class="ghost-name">Банши</span>
                     </a>
                 </li>
                 <li id="ghost6" class="ghost" data-evidence="EMF Fingerprints FreezingTemperatures">

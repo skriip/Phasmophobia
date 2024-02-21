@@ -281,17 +281,17 @@
 
         function showTir(tir) {
             document.querySelectorAll('.slide').forEach(function (slide) {
-                slide.style.display = 'none'; // Скрываем все слайды
+                slide.style.display = 'none'; 
             });
             document.querySelectorAll('.' + tir).forEach(function (slide) {
-                slide.style.display = 'block'; // Показываем слайды текущего тира
+                slide.style.display = 'block'; 
             });
-            // Убираем подчеркивание у всех переключателей и добавляем активному
+            
             document.querySelectorAll('#slider-container span').forEach(span => span.classList.remove('active'));
             document.querySelector(`#slider-container span[data-tir="${tir}"]`).classList.add('active');
         }
 
-        // По умолчанию показываем тир 1
+        
         showTir('tir1');
     </script>
 </body>
