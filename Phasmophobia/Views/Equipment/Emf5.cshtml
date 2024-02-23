@@ -7,16 +7,38 @@
     <link rel="stylesheet" href="~/css/equipImg.css" asp-append-version="true" />
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background-color: black;
             color: white;
             font-family: 'Bloody', cursive;
-            margin: 0;
+            
         }
 
         .eq-link {
-            text-decoration: none;
-            color: white;
+            position: relative; /* Относительное позиционирование для контейнера ссылки */
+            display: inline-block; /* Делаем контейнер вокруг изображения размером с изображение */
         }
+
+            .eq-link .caption {
+                display: none; /* Изначально скрываем текст */
+                position: absolute; /* Абсолютное позиционирование для текста */
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+                color: white;
+                padding: 5px;
+                text-align: left;
+                font-size:100%;
+                transition: opacity 0.3s; /* Анимация появления */
+            }
+
+            .eq-link:hover .caption {
+                display: block; /* Показываем текст при наведении на ссылку */
+                opacity: 1; /* Делаем текст непрозрачным */
+            }
 
         .img1 {
             width: 50%;
@@ -71,7 +93,7 @@
             text-decoration: underline;
         }
 
-        .name-sel{
+        .cap-sel{
             transform: scale(1.25);
         }
         .location-name {
@@ -117,7 +139,7 @@
                         <img class="slide tir2" src="~/imag/Equipment/tir2/laser2.png" alt="Лазер">
                        
                         <img class="slide tir3" src="~/imag/Equipment/tir3/laser3.png" alt="Лазер">
-                        
+                        <div class="caption">Направленный микрофон</div>
                     </a>
                 </li>
                 <li class="">
@@ -125,7 +147,7 @@
                         <img class="slide tir1 select-slide" src="~/imag/Equipment/tir1/emf.png" alt="ЭМП">
                         <img class="slide tir2 select-slide" src="~/imag/Equipment/tir2/emf2.png" alt="ЭМП">
                         <img class="slide tir3 select-slide" src="~/imag/Equipment/tir3/emf3.png" alt="ЭМП">
-                        <span class="location-name name-sel ">Направленный микрофон</span>
+                        <div class="caption cap-sel">Направленный микрофон</div>
                     </a>
                 </li>
                 <li>
