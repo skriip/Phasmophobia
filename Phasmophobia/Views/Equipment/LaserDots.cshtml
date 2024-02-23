@@ -11,6 +11,7 @@
             color: white;
             font-family: 'Bloody', cursive;
             margin: 0;
+            
         }
 
         .eq-link {
@@ -35,6 +36,7 @@
         .img1 {
             width: 75%;
             height: auto;
+            align-items:center;
         }
 
         .select-slide {
@@ -53,7 +55,8 @@
             }
 
         .active {
-            text-decoration: underline;
+            border-bottom: 2px solid;
+            ;
         }
 
         .information-container {
@@ -122,7 +125,7 @@
                     </a>
                 <li>
                     <a asp-controller="Equipment" asp-action="Incense" class="eq-link">
-                        <img class="slide tir1 " src="~/imag/Equipment/tir1/blagovi.png" alt="Благование">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/blagovi.png" alt="Благование">
                         <img class="slide tir2 " src="~/imag/Equipment/tir2/blag2.png" alt="Благование">
                         <img class="slide tir3 " src="~/imag/Equipment/tir3/blag3.png" alt="Благование">
                     </a>
@@ -192,9 +195,9 @@
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="Lamp" class="eq-link">
-                        <img class="slide tir1" src="~/imag/Equipment/tir1/Svecha.png" alt="Свеча">
+                        <img class="slide tir1 " src="~/imag/Equipment/tir1/Svecha.png" alt="Свеча">
                         <img class="slide tir2" src="~/imag/Equipment/tir2/svecha2.png" alt="Соль">
-                        <img class="slide tir3" src="~/imag/Equipment/tir3/svecha3.png" alt="Свеча">
+                        <img class="slide tir3 " src="~/imag/Equipment/tir3/svecha3.png" alt="Свеча">
                     </a>
                 </li>
                 <li>
@@ -213,8 +216,8 @@
                 </li>
             </ul>
         </div>
-        <h3 style="align-content:center">Информация о Лазерном Проекторе</h3>
-
+        <div class="information-container">
+            <h3 style="align-content:center">Информация о Лазерном Проекторе</h3>
             <p>
                 Лазерный проектор - это стартовое снаряжение, доступное с начала игры,
                 а также своего рода улика, которая используется для выявления движения призрака.
@@ -243,7 +246,7 @@
             Лазерный проектор T1 дополнительно можно удерживать и переключать «ПКМ (по умолч.)», чтобы создать конус лазерного излучения в том месте, куда он направлен.
             Лазерный проектор является электронным оборудованием, но только проектор Т1, если его активировать и удерживать, привлечёт призрака к игроку во время охоты,
             а в остальном его можно безопасно держать.
-            <p><strong>>+</strong> Направленный свет: Узкий</p>
+            <p><strong>+</strong> Направленный свет: Узкий</p>
         <p><strong>+</strong> Радиус (м): 5</p>
         <p>
         <p>
