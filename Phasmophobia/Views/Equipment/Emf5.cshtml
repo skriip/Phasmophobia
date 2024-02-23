@@ -71,6 +71,15 @@
             text-decoration: underline;
         }
 
+        .name-sel{
+            transform: scale(1.25);
+        }
+        .location-name {
+            font-size: 12px;
+            align-content:flex-start;
+           flex-wrap:wrap;
+
+        }
         #buttons-container {
             margin-top: 20px;
             display: flex;
@@ -104,18 +113,19 @@
                 <li>
                     <a asp-controller="Equipment" asp-action="LaserDots" class="eq-link">
                         <img class="slide tir1" src="~/imag/Equipment/tir1/laser.png" alt="Лазер">
-                        <div class="caption slide tir1">Лазерный проектор</div>
+                       
                         <img class="slide tir2" src="~/imag/Equipment/tir2/laser2.png" alt="Лазер">
-                        <div class="caption slide tir2">Лазерный проектор</div>
+                       
                         <img class="slide tir3" src="~/imag/Equipment/tir3/laser3.png" alt="Лазер">
-                        <div class="caption slide tir3">Лазерный проектор</div>
+                        
                     </a>
                 </li>
-                <li>
+                <li class="">
                     <a asp-controller="Equipment" asp-action="Emf5" class="eq-link">
                         <img class="slide tir1 select-slide" src="~/imag/Equipment/tir1/emf.png" alt="ЭМП">
                         <img class="slide tir2 select-slide" src="~/imag/Equipment/tir2/emf2.png" alt="ЭМП">
                         <img class="slide tir3 select-slide" src="~/imag/Equipment/tir3/emf3.png" alt="ЭМП">
+                        <span class="location-name name-sel ">Направленный микрофон</span>
                     </a>
                 </li>
                 <li>
@@ -123,7 +133,7 @@
                         <img class="slide tir1" src="~/imag/Equipment/tir1/raspit.png" alt="Распятие">
                         <img class="slide tir2" src="~/imag/Equipment/tir2/cir2.png" alt="Распятие">
                         <img class="slide tir3" src="~/imag/Equipment/tir3/cir3.png" alt="Распятие">
-                        
+                        <span class="location-name">Направленный микрофон</span>
                     </a>
                 </li>
                 <!-- Остальные элементы списка -->

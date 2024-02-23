@@ -275,7 +275,27 @@
 
     </div>
     <script>
-        showInformation();
+        // Функция для обновления состояния улик в локальном хранилище
+        function updateLocalStorage() {
+            var selectedEvidence = document.querySelectorAll(".evidence-selected");
+            var evidenceIds = Array.from(selectedEvidence).map(function (evidence) {
+                return evidence.id;
+            });
+            localStorage.setItem("selectedEvidence", JSON.stringify(evidenceIds));
+        }
+
+        // Функция для восстановления состояния улик при загрузке страницы
+        function restoreFromLocalStorage() {
+            var selectedEvidence = JSON.parse(localStorage.getItem("selectedEvidence")) || [];
+            selectedEvidence.forEach(function (evidenceId) {
+                var evidenceElement = document.getElementById(evidenceId);
+                if (evidenceElement) {
+                    evidenceElement.classList.add("evidence-selected");
+                }
+            });
+            updateGhostVisibility(); // Обновляем видимость призраков после восстановления состояния
+        }
+
         function toggleEvidence(evidenceId) {
             var evidenceElement = document.getElementById(evidenceId);
 
@@ -290,8 +310,10 @@
             }
 
             updateGhostVisibility();
+            updateLocalStorage(); // Сохраняем состояние улик после изменения
         }
-
+        window.addEventListener("beforeunload", function () {
+            localStorage.removeItem("selectedEvidence");
         function updateGhostVisibility() {
             var selectedEvidence = document.querySelectorAll(".evidence-selected:not(.crossed-out)");
             var crossedOutEvidence = document.querySelectorAll(".evidence-selected.crossed-out");

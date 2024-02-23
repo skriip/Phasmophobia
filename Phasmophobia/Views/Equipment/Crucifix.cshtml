@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фазмафобия: Улики и Призраки</title>
-    <link rel="stylesheet" href="~/css/equipImg.css" asp-append-version="true" />
+
     <style>
         body {
             background-color: black;
@@ -18,27 +18,23 @@
             color: white;
         }
 
-        .img1 {
-            width: 50%;
-            height: auto;
-        }
-
         .equip-list {
             list-style-type: none;
-            column-gap: 10px;
+            column-gap: 5px;
             padding: 0;
             column-count: 3;
         }
 
         .slide {
             display: none; /* Initially hide all slides */
-            width: 50%;
+            width: 85%;
             height: auto;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .slide.selected {
-           
+        .img1 {
+            width: 75%;
+            height: auto;
         }
 
         .select-slide {
@@ -60,25 +56,9 @@
             text-decoration: underline;
         }
 
-        #buttons-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-around;
+        .information-container {
+            flex: 1.5; /* Увеличим ширину этого блока */
         }
-
-            #buttons-container button {
-                color: white;
-                background: none;
-                border: none;
-                padding: 10px;
-                margin-right: 10px;
-                cursor: pointer;
-                transition: color 0.3s ease;
-            }
-
-                #buttons-container button:hover {
-                    color: rgba(255, 255, 255, 0.7);
-                }
     </style>
 </head>
 <body>
@@ -115,9 +95,9 @@
 
                 <li>
                     <a asp-controller="Equipment" asp-action="GhostBook" class="eq-link">
-                        <img class="slide tir1" src="~/imag/Equipment/tir1/book.png" alt="Блокнот">
-                        <img class="slide tir2" src="~/imag/Equipment/tir2/book2.png" alt="Блокнот">
-                        <img class="slide tir3" src="~/imag/Equipment/tir3/book3.png" alt="Блокнот">
+                        <img class="slide tir1 " src="~/imag/Equipment/tir1/book.png" alt="Блокнот">
+                        <img class="slide tir2 " src="~/imag/Equipment/tir2/book2.png" alt="Блокнот">
+                        <img class="slide tir3 " src="~/imag/Equipment/tir3/book3.png" alt="Блокнот">
                     </a>
                 </li>
                 <li>
@@ -136,15 +116,15 @@
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="Flashlight" class="eq-link">
-                        <img class="slide tir1" src="~/imag/Equipment/tir1/light.png" alt="Фонарик">
-                        <img class="slide tir2" src="~/imag/Equipment/tir2/light2.png" alt="Фонарик">
-                        <img class="slide tir3" src="~/imag/Equipment/tir3/lignt3.png" alt="Фонарик">
+                        <img class="slide tir1 " src="~/imag/Equipment/tir1/light.png" alt="Фонарик">
+                        <img class="slide tir2 " src="~/imag/Equipment/tir2/light2.png" alt="Фонарик">
+                        <img class="slide tir3 " src="~/imag/Equipment/tir3/lignt3.png" alt="Фонарик">
                     </a>
                 <li>
                     <a asp-controller="Equipment" asp-action="Incense" class="eq-link">
                         <img class="slide tir1" src="~/imag/Equipment/tir1/blagovi.png" alt="Благование">
-                        <img class="slide tir2" src="~/imag/Equipment/tir2/blag2.png" alt="Благование">
-                        <img class="slide tir3" src="~/imag/Equipment/tir3/blag3.png" alt="Благование">
+                        <img class="slide tir2 " src="~/imag/Equipment/tir2/blag2.png" alt="Благование">
+                        <img class="slide tir3 " src="~/imag/Equipment/tir3/blag3.png" alt="Благование">
                     </a>
                 </li>
                 <li>
@@ -163,9 +143,9 @@
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="VideoCamera" class="eq-link">
-                        <img class="slide tir1" src="~/imag/Equipment/tir1/cameravideo.png" alt="Видеокамера">
-                        <img class="slide tir2" src="~/imag/Equipment/tir2/camera2.png" alt="Соль">
-                        <img class="slide tir3" src="~/imag/Equipment/tir3/video3.png" alt="Видеокамера">
+                        <img class="slide tir1 " src="~/imag/Equipment/tir1/cameravideo.png" alt="Видеокамера">
+                        <img class="slide tir2 " src="~/imag/Equipment/tir2/camera2.png" alt="Соль">
+                        <img class="slide tir3 " src="~/imag/Equipment/tir3/video3.png" alt="Видеокамера">
                     </a>
                 </li>
                 <li>
@@ -183,7 +163,7 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="Equipment" asp-action=" SoundSensor" class="eq-link">
+                    <a asp-controller="Equipment" asp-action="SoundSensor" class="eq-link">
                         <img class="slide tir1" src="~/imag/Equipment/tir1/datchZvuk.png" alt="Датчик звука">
                         <img class="slide tir2" src="~/imag/Equipment/tir2/dtsoun2.png" alt="Соль">
                         <img class="slide tir3" src="~/imag/Equipment/tir3/dtsound3.png" alt="Датчик звука">
@@ -197,10 +177,10 @@
                         <img class="slide tir3" src="~/imag/Equipment/tir3/usp3.png" alt="Успокоительное">
                     </a>
                 <li>
-                    <a asp-controller="Equipment" asp-action="HeadMount " class="eq-link">
-                        <img class="slide tir1" src="~/imag/Equipment/tir1/krepHead.png" alt="Крепление на голову">
-                        <img class="slide tir2" src="~/imag/Equipment/tir2/head2.png" alt="Соль">
-                        <img class="slide tir3" src="~/imag/Equipment/tir3/head3.png" alt="Крепление на голову">
+                    <a asp-controller="Equipment" asp-action="HeadMount" class="eq-link">
+                        <img class="slide tir1 " src="~/imag/Equipment/tir1/krepHead.png" alt="Крепление на голову">
+                        <img class="slide tir2 " src="~/imag/Equipment/tir2/head2.png" alt="Соль">
+                        <img class="slide tir3 " src="~/imag/Equipment/tir3/head3.png" alt="Крепление на голову">
                     </a>
                 </li>
                 <li>
@@ -212,7 +192,7 @@
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="Lamp" class="eq-link">
-                        <img class="slide tir1" src="~/imag/Equipment/tir1/Svecha.png" alt="Свеча">
+                        <img class="slide tir1 " src="~/imag/Equipment/tir1/Svecha.png" alt="Свеча">
                         <img class="slide tir2" src="~/imag/Equipment/tir2/svecha2.png" alt="Соль">
                         <img class="slide tir3" src="~/imag/Equipment/tir3/svecha3.png" alt="Свеча">
                     </a>
@@ -233,65 +213,97 @@
                 </li>
             </ul>
         </div>
-        <div style="flex: 1; padding-left: 20px;">
-            <div id="buttons-container">
-                <button onclick="showInformation()">Информация</button>
+        <div class="information-container">
+            <h3 style="align-content:center">Информация о Лазерном Проекторе</h3>
+            <p>Распятие - это предмет, который используется для предотвращения попытки призрака начать охоту.</p>
+            <p>Распятие можно держать в руке, бросать на пол «G (по умолч.)» или установить «F (по умолч.)»; распятие работает во всех трёх ситуациях.</p>
+            <p>Удерживая «F», вы увидите эффективную дальность действия распятия по умолчанию; это полупрозрачная сфера, радиус которой зависит от уровня распятия:</p>
+            <ul>
+                <li>T1: 3 метра</li>
+                <li>T2: 4 метра</li>
+                <li>T3: 5 метров</li>
+            </ul>
+            <p>Когда призрак попытается начать охоту в радиусе действия распятия, охота не начнется, и будет использован заряд.</p>
+            <p>Для Демона эффективная дальность действия распятия увеличивается на 50% за каждый уровень:</p>
+            <ul>
+                <li>T1: 4,5 метра</li>
+                <li>T2: 6 метров</li>
+                <li>T3: 7,5 метров</li>
+            </ul>
+            <p>Распятие T1 имеет только один заряд, тогда как T2 и T3 имеют по два заряда.</p>
+            <p>Каждый раз, когда распятие успешно предотвращает попытку охоты, появляется эффект горения, и распятие визуально светится, а затем немного темнеет.</p>
+            <p>Если распятие, которое держит игрок, успешно предотвратит попытку охоты, оно автоматически будет брошено на землю.</p>
+            <p>После того как распятие полностью сгорит, оно станет бесполезным и не будет оказывать дальнейшего воздействия на призрака.</p>
+            <p>Кроме того, распятие не будет работать, если:</p>
+            <ul>
+                <li>Призрак находится за пределами указанного диапазона (даже если распятие находится в комнате призрака)</li>
+                <li>Проклятый предмет используется для начала проклятой охоты (за исключением случая неиспользованного распятия T3, которое можно использовать, чтобы остановить проклятую охоту ценой двух его зарядов)</li>
+                <li>Охота уже началась/идёт</li>
+             </ul>
+                <p>Каждый раз, когда используется распятие, призрак должен подождать минимум 25 секунд (20 секунд для Демона), прежде чем попытаться начать новую охоту.</p>
+                <p>Дальность действия распятия не ограничена такими препятствиями, как стены и двери (но оно не сработает, если призрак решит начать охоту на другом этаже). Сюда входят и внешние стены, а это означает, что распятия можно использовать снаружи, при условии, что призрак находится в пределах досягаемости внутри зоны расследования.</p>
+                <p>Хорошим примером этого является дом на 42 Edgefield Road, где призрак, находящийся возле передней части дома или даже наверху, может израсходовать распятие, всё ещё висящее на стене фургона.</p>
+                <p>Сфотографировав распятие, которое использовалось один или два раза, вы получите фотографию сожжённого распятия, за которую можно получить до 10$ и 10ХР в зависимости от расстояния, с которого была сделана фотография.</p>
+                <p>За два распятия можно получить до 4 фотографий сожжённого распятия.</p>
+                <p>Кроме того, если распятие будет сфотографировано в течение 20 секунд после предотвращения охоты. Оно сначала даст фотографию взаимодействия, за которую можно получить до 5 $ и 5ХР. Затем его можно сразу же сфотографировать снова для фотографии сожжённого распятия. Таким образом, с двух распятий можно получить максимум 8 фотонаград.</p>
+            <h3>Тир 1</h3>
+            <p>
+                <strong>+</strong> Радиус (м):3
+            </p>
+            <p>
+                <strong>+</strong>Использований:1
+            </p>
+            <p><strong>+</strong>Настольный режим (можно разместить) </p>
+            <p>
+                <strong>-</strong>Одноразовое
+            </p>
+            <img class="img1" src="~/imag/Equipment/tir1/cameravideo.png" alt="Видеокамера">
 
-                <button onclick="showTir1()">Тир 1</button>
-                <button onclick="showTir2()">Тир 2</button>
-                <button onclick="showTir3()">Тир 3</button>
+            <h3>Тир 2</h3>
+            <p>
+                <strong>+</strong> Радиус (м):4
+            </p>
+            <p>
+                <strong>+</strong>Использований:2
+            </p>
+            <p><strong>+</strong>Настольный режим (можно разместить) </p>
+            <p>
+                <strong>-</strong>Одноразовое
+            </p>
+            <img class="img1" src="~/imag/Equipment/tir2/camera2.png" alt="Соль">
 
-            </div>
-            <div id="ghost-info"></div>
-
+            <h3>Тир 3</h3>
+             <p>
+               <strong>+</strong> Один раз останавливает проклятую охоту
+            </p>
+            <p>
+                <strong>+</strong> Радиус (м):5
+            </p>
+            <p>
+                <strong>+</strong>Использований:2
+            </p>
+            <p><strong>+</strong>Настольный режим (можно разместить) </p>
+            <p>
+                <strong>-</strong>Одноразовое
+            </p>
+            <img class="img1" src="~/imag/Equipment/tir3/video3.png" alt="Видеокамера">
         </div>
     </div>
+
     <script>
-        function showInformation() {
-            ghostInfo = document.getElementById('ghost-info').innerHTML = `
-                    <h3>Информация о </h3>
 
-                    позже
-                    `;
-        }
-
-        function showTir1() {
-            document.getElementById("ghost-info").innerHTML = `
-                    <h2>тир1</h2>
-                    ва
-
-                    `;
-        }
-
-
-        function showTir2() {
-            document.getElementById("ghost-info").innerHTML = `
-                    <h2>тир2   </h2>
-                    ап
-
-                    `;
-        }
-        function showTir3() {
-            document.getElementById("ghost-info").innerHTML = `
-                    <h2>тир 3  </h2>
-                    р
-
-                    `;
-        }
 
         function showTir(tir) {
             document.querySelectorAll('.slide').forEach(function (slide) {
-                slide.style.display = 'none'; 
+                slide.style.display = 'none';
             });
             document.querySelectorAll('.' + tir).forEach(function (slide) {
-                slide.style.display = 'block'; 
+                slide.style.display = 'block';
             });
-            
+
             document.querySelectorAll('#slider-container span').forEach(span => span.classList.remove('active'));
             document.querySelector(`#slider-container span[data-tir="${tir}"]`).classList.add('active');
         }
-
-        
         showTir('tir1');
     </script>
 </body>

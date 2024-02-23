@@ -18,6 +18,10 @@ namespace Phasmophobia.Controllers
         {
             return View();
         }
+        public ActionResult HeadMount()
+        {
+            return View();
+        }
         public ActionResult GhostBook()
         {
             return View();
@@ -46,10 +50,7 @@ namespace Phasmophobia.Controllers
         {
             return View();
         }
-        public ActionResult HeadMount()
-        {
-            return View();
-        }
+        
         public ActionResult Incense()
         {
             return View();
