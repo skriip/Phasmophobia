@@ -15,6 +15,10 @@
             font-family: 'Bloody', cursive;
         }
 
+        .select-slide {
+            transform: scale(1.1); /* Увеличение при выборе */
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Тень при выборе */
+        }
         .eq-link {
             text-decoration: none;
             color: white;
@@ -201,9 +205,9 @@
                 </li>
                 <li>
                     <a asp-controller="Equipment" asp-action="Tripod" class="eq-link">
-                        <img class="slide" src="~/imag/Equipment/tir1/Shtat.png" alt="Штатив">
-                        <img class="slide" src="~/imag/Equipment/tir2/trip2.png" alt="Соль">
-                        <img class="slide" src="~/imag/Equipment/tir3/trip3.png" alt="Штатив">
+                        <img class="slide select-slide" src="~/imag/Equipment/tir1/Shtat.png" alt="Штатив">
+                        <img class="slide select-slide" src="~/imag/Equipment/tir2/trip2.png" alt="Соль">
+                        <img class="slide select-slide" src="~/imag/Equipment/tir3/trip3.png" alt="Штатив">
                     </a>
                 </li>
             </ul>

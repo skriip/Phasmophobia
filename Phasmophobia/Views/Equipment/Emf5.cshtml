@@ -97,10 +97,21 @@
             transform: scale(1.25);
         }
         .location-name {
-            font-size: 12px;
+            font-size: 100%;
             align-content:flex-start;
            flex-wrap:wrap;
-
+           color:white;
+           
+               
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+                color: white;
+                padding: 5px;
+                text-align: left;
+               
+                transition: opacity 0.3s; /* Анимация появления */
         }
         #buttons-container {
             margin-top: 20px;
@@ -155,7 +166,33 @@
                         <img class="slide tir1" src="~/imag/Equipment/tir1/raspit.png" alt="Распятие">
                         <img class="slide tir2" src="~/imag/Equipment/tir2/cir2.png" alt="Распятие">
                         <img class="slide tir3" src="~/imag/Equipment/tir3/cir3.png" alt="Распятие">
-                        <span class="location-name">Направленный микрофон</span>
+                        <span class="location-name ">Направленный микрофон</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="LaserDots" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/laser.png" alt="Лазер">
+
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/laser2.png" alt="Лазер">
+
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/laser3.png" alt="Лазер">
+                        <div class="caption">Направленный микрофон</div>
+                    </a>
+                </li>
+                <li class="">
+                    <a asp-controller="Equipment" asp-action="Emf5" class="eq-link">
+                        <img class="slide tir1 select-slide" src="~/imag/Equipment/tir1/emf.png" alt="ЭМП">
+                        <img class="slide tir2 select-slide" src="~/imag/Equipment/tir2/emf2.png" alt="ЭМП">
+                        <img class="slide tir3 select-slide" src="~/imag/Equipment/tir3/emf3.png" alt="ЭМП">
+                        <div class="caption cap-sel">Направленный микрофон</div>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Equipment" asp-action="Crucifix" class="eq-link">
+                        <img class="slide tir1" src="~/imag/Equipment/tir1/raspit.png" alt="Распятие">
+                        <img class="slide tir2" src="~/imag/Equipment/tir2/cir2.png" alt="Распятие">
+                        <img class="slide tir3" src="~/imag/Equipment/tir3/cir3.png" alt="Распятие">
+                        <span class="location-name ">Направленный микрофон</span>
                     </a>
                 </li>
                 <!-- Остальные элементы списка -->
