@@ -6,14 +6,21 @@
     <title>Фазмафобия: Улики и Призраки</title>
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background-color: black;
             color: white;
             font-family: 'Bloody', cursive;
-            margin: 0;
+            
         }
-
         h1, h2 {
             color: white;
+            text-align: center;
+        }
+        h1{
+            
+            
         }
 
         .evidence-list,
@@ -102,15 +109,31 @@
                 #buttons-container button:hover {
                     color: rgba(255, 255, 255, 0.7);
                 }
+       
+        .container {
+            display: flex;
+        }
+
+        .evidence-container {
+            flex: 1;
+            padding-right: 10px; /* Добавим отступ справа */
+        }
+
+        .information-container {
+            flex: 1.2; /* Увеличим ширину этого блока */
+            padding-left: 10px; /* Добавим отступ слева */
+        }
+
+        
     </style>
 </head>
 <body>
 
-    <h1>Фазмафобия: Улики и Призраки</h1>
+    <h1> Призраки</h1>
 
     <div style="display: flex;">
         <div style="flex: 1;">
-            <h2>Улики/Доказательства</h2>
+            <h2>Улики</h2>
             <ul class="evidence-list">
                 <li id="EMF" onclick="toggleEvidence('EMF')">
                     <span class="evidence-square"></span><span class="evidence-text">ЭМП уровень 5</span>
@@ -263,19 +286,39 @@
             </ul>
         </div>
 
-        <div style="flex: 1; padding-left: 20px;">
+        <div class="information-container">
             <div id="buttons-container">
-
                 <button onclick="showInformation()">Информация</button>
                 <button onclick="showStrategy()">Стратегия</button>
                 <button onclick="showBehavior()">Поведение</button>
             </div>
-            <div id="ghost-info"></div>
+            <div  id="ghost-info"></div>
         </div>
-
     </div>
+
+    
     <script>
         showInformation();
+       function updateLocalStorage() {
+            var selectedEvidence = document.querySelectorAll(".evidence-selected");
+            var evidenceIds = Array.from(selectedEvidence).map(function(evidence) {
+                return evidence.id;
+            });
+            localStorage.setItem("selectedEvidence", JSON.stringify(evidenceIds));
+        }
+
+        // Функция для восстановления состояния улик при загрузке страницы
+        function restoreFromLocalStorage() {
+            var selectedEvidence = JSON.parse(localStorage.getItem("selectedEvidence")) || [];
+            selectedEvidence.forEach(function(evidenceId) {
+                var evidenceElement = document.getElementById(evidenceId);
+                if (evidenceElement) {
+                    evidenceElement.classList.add("evidence-selected");
+                }
+            });
+            updateGhostVisibility(); // Обновляем видимость призраков после восстановления состояния
+        }
+
         function toggleEvidence(evidenceId) {
             var evidenceElement = document.getElementById(evidenceId);
 
@@ -290,6 +333,7 @@
             }
 
             updateGhostVisibility();
+            updateLocalStorage(); // Сохраняем состояние улик после изменения
         }
 
         function updateGhostVisibility() {
@@ -343,9 +387,30 @@
 
         function showBehavior() {
             document.getElementById("ghost-info").innerHTML = `
-                                    <h2>Поведение:   </h2>
-                                                                           
-                                                                            `;
+            <div >
+                                         <h3>Поведение: Джинн   </h3>
+                                                                    <p>
+                    Во время охоты, когда Джинн переходит в режим «погони», заметив игрока, он будет двигаться к нему с более высокой скоростью 2,5 м/с, пока он не окажется в пределах 3 метров от игрока.
+                    Затем он будет преследовать игрока со стандартной скоростью призрака.
+                </p>
+
+                <p>
+                    Когда Джинн использует свою способность, он снижает рассудок всех игроков в радиусе 3 метров от него на 25%. На источнике электропитания будет сгенерировано значение ЭМП ур. 2.
+                </p>
+
+                <p>
+                    Чтобы Джинн мог использовать либо способность ускорения, либо способность снижать рассудок, источник электропитания должен быть включён. Если источник электропитания не включён,
+                    Джинн не может использовать ни одну из способностей. Включён свет или нет, на это не влияет.
+                </p>
+
+                <p>
+                    Джинн не может отключить источник электропитания напрямую, взаимодействуя с ним. Но все равно может непреднамеренно отключить его, если включит слишком много лампочек, что вызовет перегруз источника электропитания.
+                </p>
+
+                <p>
+                    Существует популярный миф, утверждающий, что Джинны будут чаще взаимодействовать с электроникой, чем с другими предметами; это неправда. Джинн имеет равные шансы взаимодействовать со всем, что находится поблизости.
+                </p>
+                                                                                                            `;
         }
 
     </script>
